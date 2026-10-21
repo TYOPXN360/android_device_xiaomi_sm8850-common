@@ -50,6 +50,15 @@ lib_fixups: lib_fixups_user_type = {
 blob_fixups: blob_fixups_user_type = {
     'system_ext/etc/init/qspa_system.rc': blob_fixup()
         .regex_replace(r'\$\{ro\.boot\.vendor\.qspa:-default\}', 'default'),
+    'vendor/etc/audio/sku_canoe/audio_effects_config.xml': blob_fixup()
+        .regex_replace(
+            r'(\n(\s*)<library name="misoundfx".*\n)',
+            r'\1\2<library name="musiclight" path="libmusiclightaidl.so"/>\n',
+        )
+        .regex_replace(
+            r'(\n(\s*)<effect name="misoundfx".*\n)',
+            r'\1\2<effect name="musiclight" library="musiclight" uuid="7e1bef4c-45d6-4672-8070-25a8a4d230a7" type="1a8feafc-486d-4fea-9e19-9a5f583f1c91"/>\n',
+        ),
     (
         'vendor/lib64/libVoiceSdk.so',
         'vendor/lib64/libcapiv2uvvendor.so',
