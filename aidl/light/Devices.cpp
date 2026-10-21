@@ -18,8 +18,18 @@ bool Devices::hasNotificationDevices() const {
     return access((mBasePath + "color").c_str(), W_OK) == 0;
 }
 
+bool Devices::isEnabled() const {
+    // Reads back "hwen=<0|1>"
+    std::string hwen;
+    return readFromFile(mBasePath + "hwen", hwen) && hwen.find('1') != std::string::npos;
+}
+
 bool Devices::setSolid(const std::string& color, uint8_t brightness) {
     bool ok = true;
+    // Something else (the music light) may have switched the chip off
+    if (mCurrentMode != 0 && !isEnabled()) {
+        mCurrentMode = 0;
+    }
     if (mCurrentMode != 1) {
         if (mCurrentMode != 0) {
             writeToFile(mBasePath + "run", 0);
@@ -42,6 +52,9 @@ bool Devices::setSolid(const std::string& color, uint8_t brightness) {
 bool Devices::setBreath(const std::string& color, uint8_t brightness, uint32_t riseMs,
                         uint32_t onMs, uint32_t fallMs, uint32_t offMs) {
     bool ok = true;
+    if (mCurrentMode != 0 && !isEnabled()) {
+        mCurrentMode = 0;
+    }
     if (mCurrentMode != 2) {
         if (mCurrentMode != 0) {
             writeToFile(mBasePath + "run", 0);

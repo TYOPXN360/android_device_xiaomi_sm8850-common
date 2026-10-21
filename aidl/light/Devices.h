@@ -30,6 +30,7 @@ class Devices : public IDumpable {
     bool setBreath(const std::string& color, uint8_t brightness, uint32_t riseMs,
                    uint32_t onMs, uint32_t fallMs, uint32_t offMs);
 
+    bool isEnabled() const;
     bool setSolid(const std::string& color, uint8_t brightness);
 
     std::string mBasePath = "/sys/class/leds/aw21024_led/";
