@@ -13,6 +13,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Inherit full base telephony to lock core boot jars (core-oj) at the front
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+
 # Enforce generic ramdisk allow list
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
