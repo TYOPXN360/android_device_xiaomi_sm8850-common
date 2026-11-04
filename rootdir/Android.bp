@@ -16,10 +16,16 @@ prebuilt_etc {
     vendor: true,
 }
 
-prebuilt_etc {
+// init.rc imports this as /init.recovery.${ro.hardware}.rc, i.e. straight
+// from the root of the recovery ramdisk. It must therefore be a prebuilt_root
+// (prebuilt_etc always lands under etc/, and sub_dir "init" used to put it in
+// /system/etc/init where that import cannot see it). When the import fails the
+// whole file is skipped: the backlight stays at full brightness (screen
+// blinding, and the panel overheats) and the touch panel never comes up.
+prebuilt_root {
     name: "init.recovery.qcom.rc",
     src: "etc/init.recovery.qcom.rc",
-    sub_dir: "init",
+    install_in_root: true,
     recovery: true,
 }
 
