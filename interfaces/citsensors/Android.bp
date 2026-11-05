@@ -4,7 +4,7 @@
 //
 
 aidl_interface {
-    name: "vendor.xiaomi.sensor.citsensorservice",
+    name: "vendor.xiaomi.sensor.citsensorservice_iface",
     vendor_available: true,
     srcs: ["vendor/xiaomi/sensor/citsensorservice/*.aidl"],
     stability: "vintf",
