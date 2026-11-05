@@ -26,8 +26,17 @@
 #
 
 on init
-    write /sys/class/backlight/panel0-backlight/brightness 200
     setprop sys.usb.configfs 1
+
+    # RecoveryUI sets the backlight itself on start-up: InitScreensaver()
+    # writes max_brightness * ro.recovery.ui.brightness_normal_percent / 100,
+    # and the property defaults to 50 - on this panel that is 16383 * 0.5 =
+    # 8191, which is blinding and heats the panel up. Writing the brightness
+    # node from a .rc file does not stick because RecoveryUI overwrites it as
+    # soon as /system/bin/recovery starts, so lower the percentage it uses
+    # instead. 3% of 16383 is ~491.
+    setprop ro.recovery.ui.brightness_normal_percent 3
+    setprop ro.recovery.ui.brightness_dimmed_percent 1
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
