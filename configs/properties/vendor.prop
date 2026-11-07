@@ -244,8 +244,8 @@ ro.soc.manufacturer=QTI
 ro.vendor.board.family=f-canoe
 
 # UWU device identity
-ro.soc.model=SM8850-UWU
-ro.soc.board=uwu_songyuan
+ro.soc.model=SM8850
+ro.soc.marketing_name=Snapdragon 8 Elite Gen 5
 ro.uwu.device=1
 ro.uwu.cpu=songyuan
 ro.product.uwu.name=uwu_songyuan
