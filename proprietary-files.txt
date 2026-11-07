@@ -80,6 +80,7 @@ vendor/bin/audioadsprpcd
 vendor/bin/loadalgo
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
 vendor/etc/init/vendor.qti.audio-adsprpc-service.rc
+vendor/etc/init/vendor.xiaomi.hardware.micharge-service.rc
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
 vendor/lib64/libloadalgo_stub.so
@@ -96,6 +97,7 @@ odm/lib64/libcrussp.so
 odm/lib64/libtfacal.so
 odm/lib64/libwindns.so
 vendor/bin/hw/audiohalservice.qti
+vendor/bin/hw/vendor.xiaomi.hardware.micharge-service
 vendor/etc/init/audiohalservice_qti.rc
 vendor/etc/models/acd/conv_detection.eai
 vendor/etc/models/acd/environment.eai
@@ -298,6 +300,7 @@ vendor/etc/vintf/manifest/vendor.xiaomi.hardware.camera.mivimessage-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.dynamiccameraserver.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.postprocservice-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.quickcamera.xml
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.micharge.xml
 vendor/framework/androidx.camera.extensions.impl.jar
 
 # Camera Firmware
@@ -599,6 +602,7 @@ vendor/lib64/libsnapdragoncolor-qdcm.so
 vendor/lib64/vendor.qti.hardware.display.snapalloc-impl.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.display.mihwcextension-V2-ndk.so
+vendor/lib64/vendor.xiaomi.hardware.micharge-V2-ndk.so
 
 # Display (SDM)
 vendor/etc/clstc_config_library.xml
@@ -984,6 +988,7 @@ vendor/bin/init.kernel.post_boot-canoe_default_6_2.sh
 vendor/bin/init.kernel.post_boot-canoe.sh
 vendor/bin/init.kernel.post_boot.sh
 vendor/bin/init.qti.kernel.sh
+vendor/bin/start_subsys.sh
 vendor/bin/init.qti.write.sh
 vendor/bin/system_dlkm_modprobe.sh
 vendor/bin/vendor_modprobe.sh

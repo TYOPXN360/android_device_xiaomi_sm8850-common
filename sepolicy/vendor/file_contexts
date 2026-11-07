@@ -91,7 +91,7 @@
 /sys/module/metis/parameters(/.*)? u:object_r:sysfs_migt:s0
 
 # Micharge
-/(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.micharge-service-dummy u:object_r:hal_micharge_default_exec:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.micharge-service u:object_r:hal_micharge_default_exec:s0
 /dev/smart_charge_cdev u:object_r:vendor_smart_charge_device:s0
 
 # MliPay
