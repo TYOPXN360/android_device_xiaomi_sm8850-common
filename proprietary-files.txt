@@ -564,12 +564,10 @@ vendor/lib64/vendor.qti.data.factoryservice-V2-ndk.so
 vendor/lib64/vendor.qti.hardware.data.cneaidlservice.internal.server-V2-ndk.so
 
 # Display
-vendor/etc/displayconfig/display_id_4630946473896859282.xml
 vendor/etc/displayconfig/display_id_4630946850534658451.xml
 vendor/etc/displayconfig/display_id_4630946916234099603.xml
 vendor/etc/displayconfig/display_id_4630947039571902850.xml
 vendor/etc/displayconfig/display_id_4630947039571902851.xml
-vendor/etc/displayconfig/display_id_4630947039571902866.xml
 vendor/etc/displayconfig/display_id_4630947075271898515.xml
 
 # Display (HDR)
@@ -607,8 +605,6 @@ vendor/lib64/libqdcm-mode-parser.so
 vendor/lib64/libqdMetaData.so
 vendor/lib64/libqdutils.so
 vendor/lib64/libqservice.so
-vendor/lib64/libsdmcore.so
-vendor/lib64/libsdmdal.so
 vendor/lib64/libsdmutils.so
 vendor/lib64/libsnapdragoncolor-manager.so
 vendor/lib64/libsnapdragoncolor-qdcm.so
@@ -662,7 +658,6 @@ vendor/lib64/libsdm-brightnessaware-parser.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-colormgr-algo.so
 vendor/lib64/libsdm-disp-vndapis.so
-vendor/lib64/libsdmclient.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtestutils.so
 vendor/lib64/libtinyxml2_1.so
@@ -1762,9 +1757,7 @@ odm/lib64/libbarrage.so
 odm/lib64/libdynamicelvss.so
 odm/lib64/libfcmintf.so
 odm/lib64/libframecapturemanager.so
-odm/lib64/libframemasterintf.so
 odm/lib64/vendor.xiaomi.hardware.framecapturemanager-V1-ndk.so
-odm/lib64/vendor.xiaomi.hardware.framemaster-V1-ndk.so
 
 # Trusted User Interface
 vendor/bin/hw/vendor.qti.hardware.trustedui-aidl-service-qti
