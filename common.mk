@@ -239,7 +239,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.memtrack-service
 
 # MiCharge HAL is installed from the matching stock vendor image.
-DEVICE_MANIFEST_FILE += vendor/xiaomi/sm8850-common/proprietary/vendor/etc/vintf/manifest/vendor.xiaomi.hardware.micharge.xml
 
 # Mountpoint
 $(call soong_config_set,rfs,mpss_firmware_symlink_target,modem_firmware)

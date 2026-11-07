@@ -3,4 +3,9 @@
         <name>vendor.qti.sla.service</name>
         <fqname>ISlaAIDLService/default</fqname>
     </hal>
+    <hal format="aidl">
+        <name>vendor.xiaomi.hardware.micharge</name>
+        <version>2</version>
+        <fqname>IMiCharge/default</fqname>
+    </hal>
 </manifest>

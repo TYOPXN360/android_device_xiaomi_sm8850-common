@@ -300,7 +300,6 @@ vendor/etc/vintf/manifest/vendor.xiaomi.hardware.camera.mivimessage-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.dynamiccameraserver.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.postprocservice-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.quickcamera.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.micharge.xml
 vendor/framework/androidx.camera.extensions.impl.jar
 
 # Camera Firmware
