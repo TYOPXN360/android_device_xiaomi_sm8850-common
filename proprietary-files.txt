@@ -249,6 +249,18 @@ vendor/lib64/soundfx/libvolumelistener.so;DISABLE_DEPS
 vendor/bin/batterysecret
 vendor/etc/init/hw/init.batterysecret.rc
 
+# Battery Anti-Aging
+vendor/bin/hw/vendor.xiaomi.hardware.batteryantiaging-service
+vendor/etc/charger/charger_fstab.xiaomi
+vendor/etc/init/vendor.xiaomi.hardware.batteryantiaging-service.rc
+vendor/lib64/libbaa_BasedOnCC_VolDown.so
+vendor/lib64/libbaa_ChargeInfo.so
+vendor/lib64/libbaa_ChargerModeProtect.so
+vendor/lib64/libbaa_FreqChgFvDown.so
+vendor/lib64/libbaa_LowSohFvDown.so
+vendor/lib64/libbaa_common.so
+vendor/lib64/vendor.xiaomi.hardware.batteryantiaging-V1-ndk.so
+
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@aidl-service-qti
 vendor/etc/init/android.hardware.bluetooth@aidl-service-qti-debug.rc:vendor/etc/init/android.hardware.bluetooth@aidl-service-qti.rc

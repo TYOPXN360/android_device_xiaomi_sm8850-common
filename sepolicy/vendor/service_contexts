@@ -37,6 +37,9 @@ vendor.xiaomi.hardware.mediaeventgatherservice.IMediaGather/default             
 # MiCharge
 vendor.xiaomi.hardware.micharge.IMiCharge/default    u:object_r:hal_micharge_service:s0
 
+# Battery Anti-Aging
+vendor.xiaomi.hardware.batteryantiaging.IBatteryAntiAging/default u:object_r:hal_batteryantiaging_service:s0
+
 # Mlipay
 vendor.xiaomi.hardware.mlipay.IMlipayService/default        u:object_r:hal_mlipay_service:s0
 

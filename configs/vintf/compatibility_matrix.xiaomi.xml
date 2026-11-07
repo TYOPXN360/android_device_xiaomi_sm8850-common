@@ -180,6 +180,13 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.xiaomi.hardware.batteryantiaging</name>
+        <interface>
+            <name>IBatteryAntiAging</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="aidl" optional="true"> 
         <name>vendor.xiaomi.hardware.radio.cdc</name>
         <interface>
