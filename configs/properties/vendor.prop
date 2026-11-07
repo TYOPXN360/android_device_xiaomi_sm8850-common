@@ -243,6 +243,13 @@ vendor.perf.qfps.enable=1
 ro.soc.manufacturer=QTI
 ro.vendor.board.family=f-canoe
 
+# UWU device identity
+ro.soc.model=SM8850-UWU
+ro.soc.board=uwu_songyuan
+ro.uwu.device=1
+ro.uwu.cpu=songyuan
+ro.product.uwu.name=uwu_songyuan
+
 # QCOMsysD
 persist.vendor.qcomsysd.enabled=1
 
