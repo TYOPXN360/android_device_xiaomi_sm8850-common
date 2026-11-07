@@ -564,10 +564,12 @@ vendor/lib64/vendor.qti.data.factoryservice-V2-ndk.so
 vendor/lib64/vendor.qti.hardware.data.cneaidlservice.internal.server-V2-ndk.so
 
 # Display
+vendor/etc/displayconfig/display_id_4630946473896859282.xml
 vendor/etc/displayconfig/display_id_4630946850534658451.xml
 vendor/etc/displayconfig/display_id_4630946916234099603.xml
 vendor/etc/displayconfig/display_id_4630947039571902850.xml
 vendor/etc/displayconfig/display_id_4630947039571902851.xml
+vendor/etc/displayconfig/display_id_4630947039571902866.xml
 vendor/etc/displayconfig/display_id_4630947075271898515.xml
 
 # Display (HDR)
