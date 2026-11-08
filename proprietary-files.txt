@@ -711,7 +711,12 @@ vendor/lib64/libdfintf.so
 vendor/lib64/vendor.xiaomi.hardware.displayfeature_aidl-V2-ndk.so
 
 # Dolby
+# The China build implements Dolby through the DMS HAL below rather than the
+# C2 dax decoder service the international build ships. The international-only
+# blobs are listed at the end of this file.
 vendor/bin/hw/vendor.dolby.dms.service
+vendor/etc/dolby/dax-default.xml
+vendor/etc/dolby/dax-default-spatializer.xml
 vendor/etc/init/dms-service.rc
 vendor/etc/vintf/manifest/dms-service.xml
 vendor/lib64/libcodec2_soft_ac4dec.so
@@ -910,7 +915,12 @@ vendor/lib64/vendor.qti.hardware.hexlp-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.hexlp-V2-ndk.so
 
 # IMS
+# The China build calls the forwarding and settings components atfwd and
+# imssettings; the international build ships them as AtFwd2 and
+# QtiTelephonyService, which are not present here.
+system_ext/app/atfwd/atfwd.apk
 system_ext/app/ImsDataChannelService/ImsDataChannelService.apk
+system_ext/app/imssettings/imssettings.apk
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml
 system_ext/etc/sysconfig/qti_telephony_system_packages_config.xml
 system_ext/etc/sysconfig/qti_whitelist_system_ext.xml
@@ -1925,18 +1935,31 @@ system_ext/lib64/litert/libqnn_delegate_jni.so
 # AOSP's external/tensorflow, so they are intentionally not extracted here.
 
 
-# Not present in the China stock dump. The China build ships the same
-# functionality under different component names (atfwd, QtiTelephony,
-# vendor.dolby.dms.service), so these international-only blobs are skipped.
-# Checked against every partition of OS4.0.5.0.XGNCNXM:
+# Blobs shipped by the international firmware but absent from the China dump
+# (OS4.0.5.0.XGNCNXM, checked against all nine partitions). The China build
+# implements the same functionality with the components named after each
+# entry, and those substitutes are listed earlier in this file.
+#
 # - vendor/bin/hw/vendor.dolby.media.c2-default-service-dax
+#       Dolby is a DMS HAL here: vendor.dolby.dms.service
 # - vendor/etc/init/vendor.dolby.media.c2-default-service-dax.rc
-# - vendor/etc/media_codecs_dolby_audio.xml
+#       covered by vendor/etc/init/dms-service.rc
 # - vendor/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml
+#       covered by vendor/etc/vintf/manifest/dms-service.xml
+# - vendor/etc/media_codecs_dolby_audio.xml
+#       Dolby decodes through libqcodec2_dolbydecoderfilter.so and the dax
+#       configs; the encoder and enhancement filters are not shipped here
 # - vendor/lib64/libcodec2_store_dolby.so
+#       Dolby codecs via libcodec2_store_mi.so
 # - vendor/etc/vintf/manifest/dpm-saidl.xml
+#       no equivalent, the data port manager is not used by this build
 # - system_ext/lib64/libimscamera_jni.so
+#       no equivalent, the China IMS stack has no camera sharing
 # - system_ext/lib64/libmmparser_lite.so
+#       covered by system_ext/lib64/libembmsmmparser_lite.so
 # - vendor/etc/vintf/manifest/vendor.qti.qccvndhal_aidl-service.xml
+#       no equivalent, QCC video HAL is not used by this build
 # - system_ext/app/AtFwd2/AtFwd2.apk
+#       system_ext/app/atfwd/atfwd.apk
 # - system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
+#       system_ext/app/imssettings/imssettings.apk
