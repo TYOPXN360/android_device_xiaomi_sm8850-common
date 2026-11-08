@@ -134,7 +134,7 @@ vendor/lib64/libaudioserviceexampleimpl.so;DISABLE_DEPS
 vendor/lib64/libav_lvacfsencoder.so
 vendor/lib64/libav_miwnsencoder.so
 vendor/lib64/libbatterylistener.so
-vendor/lib64/libc++_shared.so
+system_ext/lib64/libc++_shared.so
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
@@ -202,7 +202,7 @@ vendor/lib64/libstream_sensorrenderer.so
 vendor/lib64/libstream_soundtrigger.so
 vendor/lib64/libstream_ultrasound.so
 vendor/lib64/libtiantongpal.so
-vendor_ext/lib64/libultrasound_notify.so:vendor/lib64/libultrasound_notify.so
+vendor/lib64/libultrasound_notify.so:vendor/lib64/libultrasound_notify.so
 vendor/lib64/libvui_utils.so
 vendor/lib64/libxlog.so
 vendor/lib64/sva_plugin.so
@@ -301,16 +301,16 @@ vendor/lib64/vendor.qti.hardware.bttpi-V3-ndk.so
 
 # Camera
 odm/etc/vintf/manifest/misensor_camera.xml
-vendor/etc/init/vendor.qti.camera.provider-service_64.rc
+odm/etc/init/vendor.qti.camera.provider-service_64.rc
 vendor/etc/permissions/camera_extensions.xml
-vendor/etc/vintf/manifest/vendor.qti.camera.offlinecamera-impl.xml
-vendor/etc/vintf/manifest/vendor.qti.camera.provider.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.camera.aon-impl.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.aidl.intentaware-service.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.aidlbgservice-service.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.camera.mivimessage-service.xml
+odm/etc/vintf/manifest/vendor.qti.camera.offlinecamera-impl.xml
+odm/etc/vintf/manifest/vendor.qti.camera.provider.xml
+odm/etc/vintf/manifest/vendor.xiaomi.camera.aon-impl.xml
+odm/etc/vintf/manifest/vendor.xiaomi.hardware.aidl.intentaware-service.xml
+odm/etc/vintf/manifest/vendor.xiaomi.hardware.aidlbgservice-service.xml
+odm/etc/vintf/manifest/vendor.xiaomi.hardware.camera.mivimessage-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.dynamiccameraserver.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.postprocservice-service.xml
+odm/etc/vintf/manifest/vendor.xiaomi.hardware.postprocservice-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.quickcamera.xml
 vendor/framework/androidx.camera.extensions.impl.jar
 
@@ -361,9 +361,9 @@ odm/firmware/CAMERA_ICP.b19
 odm/firmware/CAMERA_ICP.b20
 odm/firmware/CAMERA_ICP.mbn
 odm/firmware/CAMERA_ICP.mdt
-vendor/firmware/CAMERA_ICP_1.elf
-vendor/firmware/CAMERA_ICP_170.elf
-vendor/firmware/CAMERA_ICP.elf
+odm/firmware/CAMERA_ICP_1.elf
+odm/firmware/CAMERA_ICP_170.elf
+odm/firmware/CAMERA_ICP.elf
 
 # CDSP
 vendor/bin/cdsprpcd
@@ -574,7 +574,7 @@ vendor/etc/displayconfig/display_id_4630947075271898515.xml
 
 # Display (HDR)
 vendor/lib64/libhdr_tm.so
-vendor/lib64/libhdr10plus.so;DISABLE_CHECKELF
+odm/lib64/libhdr10plus.so;DISABLE_CHECKELF
 vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 vendor/lib64/libhdrvivid.so
@@ -615,7 +615,6 @@ vendor/lib64/libsnapdragoncolor-qdcm.so
 vendor/lib64/vendor.qti.hardware.display.snapalloc-impl.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.display.mihwcextension-V2-ndk.so
-vendor/lib64/vendor.xiaomi.hardware.micharge-V2-ndk.so
 
 # Display (SDM)
 vendor/etc/clstc_config_library.xml
@@ -713,15 +712,11 @@ vendor/lib64/vendor.xiaomi.hardware.displayfeature_aidl-V2-ndk.so
 
 # Dolby
 vendor/bin/hw/vendor.dolby.dms.service
-vendor/bin/hw/vendor.dolby.media.c2-default-service-dax
 vendor/etc/init/dms-service.rc
-vendor/etc/init/vendor.dolby.media.c2-default-service-dax.rc
-vendor/etc/media_codecs_dolby_audio.xml
 vendor/etc/vintf/manifest/dms-service.xml
-vendor/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml
-vendor/lib64/libcodec2_store_dolby.so
 vendor/lib64/libcodec2_soft_ac4dec.so
 vendor/lib64/libcodec2_soft_ddpdec.so
+vendor/lib64/libcodec2_store_mi.so
 vendor/lib64/libdapparamstorage.so
 vendor/lib64/libdeccfg.so
 vendor/lib64/libdlbdsservice.so
@@ -741,7 +736,6 @@ system_ext/framework/dpmapi.jar
 vendor/bin/vendor.dpmd
 vendor/etc/dpm_vndr/vendor.dpm.conf
 vendor/etc/init/vendor.dpmd.rc
-vendor/etc/vintf/manifest/dpm-saidl.xml
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/vendor.libdpmctmgr.so
 vendor/lib64/vendor.libdpmfdmgr.so
@@ -939,7 +933,6 @@ system_ext/lib64/lib-imsvideocodec.so
 system_ext/lib64/lib-imsvt.so
 system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/lib-imsvtutils.so
-system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.ims.datachannelservice-V1-ndk.so
 system_ext/lib64/vendor.qti.ims.datachannelservice-V2-ndk.so
@@ -1034,7 +1027,6 @@ vendor/lib64/vendor.qti.hardware.ListenSoundModelAidl-V2-ndk.so
 
 # Media
 system_ext/lib64/libmmosal.so
-system_ext/lib64/libmmparser_lite.so
 vendor/bin/hw/qconfigservice
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
 vendor/bin/init.qti.media.sh
@@ -1136,33 +1128,23 @@ vendor/lib64/vendor.xiaomi.hardware.mlipay-V1-ndk.so
 vendor/etc/public.libraries.txt
 
 # Neural networks
-vendor/lib64/libQnnChrometraceProfilingReader.so
-vendor/lib64/libQnnCpu.so
-vendor/lib64/libQnnGpu.so
-vendor/lib64/libQnnGpuNetRunExtensions.so
-vendor/lib64/libQnnGpuProfilingReader.so
-vendor/lib64/libQnnHta.so
-vendor/lib64/libQnnHtp.so
-vendor/lib64/libQnnHtpNetRunExtensions.so
-vendor/lib64/libQnnHtpOptraceProfilingReader.so
-vendor/lib64/libQnnHtpPrepare.so
-vendor/lib64/libQnnHtpProfilingReader.so
-vendor/lib64/libQnnHtpV68CalculatorStub.so
-vendor/lib64/libQnnHtpV68Stub.so
-vendor/lib64/libQnnHtpV69CalculatorStub.so
-vendor/lib64/libQnnHtpV69Stub.so
-vendor/lib64/libQnnHtpV73CalculatorStub.so
-vendor/lib64/libQnnHtpV73Stub.so
-vendor/lib64/libQnnHtpV75CalculatorStub.so
-vendor/lib64/libQnnHtpV75Stub.so
-vendor/lib64/libQnnHtpV79CalculatorStub.so
-vendor/lib64/libQnnHtpV79Stub.so
-vendor/lib64/libQnnHtpV81CalculatorStub.so
-vendor/lib64/libQnnHtpV81Stub.so
-vendor/lib64/libQnnJsonProfilingReader.so
-vendor/lib64/libQnnModelDlc.so
-vendor/lib64/libQnnSaver.so
-vendor/lib64/libQnnSystem.so
+odm/lib64/libQnnChrometraceProfilingReader.so
+odm/lib64/libQnnCpu.so
+odm/lib64/libQnnGpuNetRunExtensions.so
+odm/lib64/libQnnGpuProfilingReader.so
+odm/lib64/libQnnHta.so
+odm/lib64/libQnnHtpNetRunExtensions.so
+odm/lib64/libQnnHtpOptraceProfilingReader.so
+odm/lib64/libQnnHtpProfilingReader.so
+odm/lib64/libQnnHtpV68CalculatorStub.so
+odm/lib64/libQnnHtpV69CalculatorStub.so
+odm/lib64/libQnnHtpV73CalculatorStub.so
+odm/lib64/libQnnHtpV75CalculatorStub.so
+odm/lib64/libQnnHtpV79CalculatorStub.so
+odm/lib64/libQnnHtpV81CalculatorStub.so
+odm/lib64/libQnnJsonProfilingReader.so
+odm/lib64/libQnnModelDlc.so
+odm/lib64/libQnnSystem.so
 
 # NFC
 odm/etc/libnfc-nci.conf:vendor/etc/libnfc-nci.conf
@@ -1310,7 +1292,6 @@ system_ext/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so
 system_ext/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so
 vendor/bin/qcc-vendor
 vendor/etc/init/init.qccvendor.rc
-vendor/etc/vintf/manifest/vendor.qti.qccvndhal_aidl-service.xml
 vendor/lib64/libqcc_file_agent.so
 vendor/lib64/libqcc_sdk.so
 vendor/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so;MODULE_SUFFIX=_vendor
@@ -1391,15 +1372,15 @@ vendor/lib64/libspl.so
 vendor/lib64/vendor.qti.hardware.qseecom-V1-ndk.so
 
 # QSN
-vendor/lib64/qsn1nrt430.bin
-vendor/lib64/qsn1nrt43270.bin
-vendor/lib64/qsn1rt1690_vga.bin
-vendor/lib64/qsn1rt169270_vga.bin
-vendor/lib64/qsn1rt430_vga.bin
-vendor/lib64/qsn1rt43270_vga.bin
-vendor/lib64/qsn2all.bin
-vendor/lib64/qsn3_video.bin
-vendor/lib64/qsn3all.bin
+odm/lib64/qsn1nrt430.bin
+odm/lib64/qsn1nrt43270.bin
+odm/lib64/qsn1rt1690_vga.bin
+odm/lib64/qsn1rt169270_vga.bin
+odm/lib64/qsn1rt430_vga.bin
+odm/lib64/qsn1rt43270_vga.bin
+odm/lib64/qsn2all.bin
+odm/lib64/qsn3_video.bin
+odm/lib64/qsn3all.bin
 
 # QSPA
 system_ext/etc/init/qspa_system.rc
@@ -1439,8 +1420,6 @@ product/framework/uimremoteclientlibrary.jar
 product/framework/uimremoteserverlibrary.jar
 product/framework/uimservicelibrary.jar
 product/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so
-system_ext/app/AtFwd2/AtFwd2.apk
-system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/qti_libpermissions.xml
 system_ext/etc/permissions/qti_permissions.xml
@@ -1716,7 +1695,7 @@ vendor/lib64/vendor.qti.snapdragonServices-V2-ndk.so
 vendor/lib64/vendor.qti.snapdragonServices.qape-V1-ndk.so
 
 # Soter
-mi_ext/product/app/SoterService/SoterService.apk:product/app/SoterService/SoterService.apk
+product/app/SoterService/SoterService.apk:product/app/SoterService/SoterService.apk
 vendor/bin/hw/vendor.qti.hardware.soter-service
 vendor/bin/vendor.qti.hardware.soter-provision
 vendor/etc/init/vendor.qti.hardware.soter-service.rc
@@ -1854,10 +1833,11 @@ system_ext/lib64/libwfdconfigutils.so|2ba443281a75baf4c40a0bfcbfcd2db296405658
 system_ext/lib64/libwfddisplayconfig.so|f83142f12c2aaef34178b4091d5e03cb563a31ad
 system_ext/lib64/libwfdmminterface.so|e97b771999cc69a76a2918f014ac0aac8e0872c6
 system_ext/lib64/libwfdmmsink.so|d2aa9d4663c4c2fbadcac91724167955ae6a3bac
-system_ext/lib64/libwfdmmsrc_system.so|ab23a6ce749d1ecc9bef869fae0eb3a0e293d389|ab23a6ce749d1ecc9bef869fae0eb3a0e293d389
+system_ext/lib64/libwfdmmsrc_system.so
+system_ext/lib64/libwfdparserlite.so
 system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so|f3c438b50e32156d630cb2f6ba608104fe5be421
 system_ext/lib64/libwfdrtsp.so|4595976a1897782e22fc7d519c7293d0a81b4d15
-system_ext/lib64/libwfdservice.so|9450ceb1750849a7aca7e38d1203e1e0277c76b0|9450ceb1750849a7aca7e38d1203e1e0277c76b0
+system_ext/lib64/libwfdservice.so
 system_ext/lib64/libwfdsinksm.so|18fa4c0fed1b5bc4c34a5c29ed11f67891c54ad3
 system_ext/lib64/libwfduibcinterface.so|1d0377b18ca2d204cb30c705cc5f7297308ba733
 system_ext/lib64/libwfduibcsink.so|c3508c6b7bf37d0efa8c5b688faf8345b06a546b
@@ -1915,3 +1895,27 @@ vendor/lib64/vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk.so
 
 # Xiaomi MAC address
 vendor/bin/nv_mac
+
+
+# Not present in the China stock dump (China stock ships the same functionality under different component names (atfwd, Iptelephony, vendor.dolby.dms.service)):
+# - vendor/bin/hw/vendor.dolby.media.c2-default-service-dax
+# - vendor/etc/init/vendor.dolby.media.c2-default-service-dax.rc
+# - vendor/etc/media_codecs_dolby_audio.xml
+# - vendor/etc/vintf/manifest/vendor.dolby.media.c2-default-service-dax.xml
+# - vendor/lib64/libcodec2_store_dolby.so
+# - vendor/etc/vintf/manifest/dpm-saidl.xml
+# - system_ext/lib64/libimscamera_jni.so
+# - system_ext/lib64/libmmparser_lite.so
+# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnGpu.so
+# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtp.so
+# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpPrepare.so
+# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV68Stub.so
+# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV69Stub.so
+# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV73Stub.so
+# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV75Stub.so
+# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV79Stub.so
+# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV81Stub.so
+# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnSystem.so
+# - vendor/etc/vintf/manifest/vendor.qti.qccvndhal_aidl-service.xml
+# - system_ext/app/AtFwd2/AtFwd2.apk
+# - system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
