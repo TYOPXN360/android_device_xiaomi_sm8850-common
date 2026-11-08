@@ -135,6 +135,10 @@ vendor/lib64/libav_lvacfsencoder.so
 vendor/lib64/libav_miwnsencoder.so
 vendor/lib64/libbatterylistener.so
 system_ext/lib64/libc++_shared.so
+# /odm camera HALs link against libc++_shared and the odm linker namespace
+# does not search /system_ext/lib64, so ship a second copy there. The module
+# suffix keeps the two apart, both still install as libc++_shared.so.
+odm/lib64/libc++_shared.so;MODULE_SUFFIX=_odm
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2udk7vendor.so
