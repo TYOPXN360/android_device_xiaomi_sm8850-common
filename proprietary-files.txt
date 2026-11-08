@@ -1144,7 +1144,6 @@ odm/lib64/libQnnHtpV79CalculatorStub.so
 odm/lib64/libQnnHtpV81CalculatorStub.so
 odm/lib64/libQnnJsonProfilingReader.so
 odm/lib64/libQnnModelDlc.so
-odm/lib64/libQnnSystem.so
 
 # NFC
 odm/etc/libnfc-nci.conf:vendor/etc/libnfc-nci.conf
@@ -1896,8 +1895,40 @@ vendor/lib64/vendor.xiaomi.hardware.mediaeventgatherservice-V1-ndk.so
 # Xiaomi MAC address
 vendor/bin/nv_mac
 
+# MiLiteRT / QNN runtime. The stub APK links against these from its own
+# lib/arm64 directory, which only holds symlinks into system_ext/lib64/litert;
+# tracking the real files keeps the linker happy and gives the QNN libraries
+# a single location.
+system_ext/lib64/litert/libQnnDsp.so
+system_ext/lib64/litert/libQnnDspV66Skel.so
+system_ext/lib64/litert/libQnnDspV66Stub.so
+system_ext/lib64/litert/libQnnGpu.so
+system_ext/lib64/litert/libQnnHtp.so
+system_ext/lib64/litert/libQnnHtpPrepare.so
+system_ext/lib64/litert/libQnnHtpV68Skel.so
+system_ext/lib64/litert/libQnnHtpV68Stub.so
+system_ext/lib64/litert/libQnnHtpV69Skel.so
+system_ext/lib64/litert/libQnnHtpV69Stub.so
+system_ext/lib64/litert/libQnnHtpV73Skel.so
+system_ext/lib64/litert/libQnnHtpV73Stub.so
+system_ext/lib64/litert/libQnnHtpV75Skel.so
+system_ext/lib64/litert/libQnnHtpV75Stub.so
+system_ext/lib64/litert/libQnnHtpV79Skel.so
+system_ext/lib64/litert/libQnnHtpV79Stub.so
+system_ext/lib64/litert/libQnnHtpV81Skel.so
+system_ext/lib64/litert/libQnnHtpV81Stub.so
+system_ext/lib64/litert/libQnnSystem.so
+system_ext/lib64/litert/libQnnTFLiteDelegate.so
+system_ext/lib64/litert/libqnn_delegate_jni.so
 
-# Not present in the China stock dump (China stock ships the same functionality under different component names (atfwd, Iptelephony, vendor.dolby.dms.service)):
+# The TensorFlow Lite JNI libraries next to the QNN runtime are provided by
+# AOSP's external/tensorflow, so they are intentionally not extracted here.
+
+
+# Not present in the China stock dump. The China build ships the same
+# functionality under different component names (atfwd, QtiTelephony,
+# vendor.dolby.dms.service), so these international-only blobs are skipped.
+# Checked against every partition of OS4.0.5.0.XGNCNXM:
 # - vendor/bin/hw/vendor.dolby.media.c2-default-service-dax
 # - vendor/etc/init/vendor.dolby.media.c2-default-service-dax.rc
 # - vendor/etc/media_codecs_dolby_audio.xml
@@ -1906,16 +1937,6 @@ vendor/bin/nv_mac
 # - vendor/etc/vintf/manifest/dpm-saidl.xml
 # - system_ext/lib64/libimscamera_jni.so
 # - system_ext/lib64/libmmparser_lite.so
-# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnGpu.so
-# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtp.so
-# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpPrepare.so
-# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV68Stub.so
-# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV69Stub.so
-# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV73Stub.so
-# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV75Stub.so
-# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV79Stub.so
-# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnHtpV81Stub.so
-# - system_ext/priv-app/MiLiteRTServiceStub/lib/arm64/libQnnSystem.so
 # - vendor/etc/vintf/manifest/vendor.qti.qccvndhal_aidl-service.xml
 # - system_ext/app/AtFwd2/AtFwd2.apk
 # - system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
