@@ -133,6 +133,36 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .add_needed('libaudiobase.so')
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
+    # The audio HAL libraries from this dump link the V4 NDK audio types while
+    # frameworks/av builds against V5. Soong refuses a module that pulls in both
+    # versions, so every blob that still asks for V4 is rewritten to V5.
+    'vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+    'vendor/lib64/hw/libaudiocorehal.default.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+    'vendor/lib64/hw/libaudiocorehal.qti.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+    'vendor/lib64/libaudio_aidl_conversion_common_ndk.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
+        .replace_needed('android.hardware.audio.common-V4-ndk.so', 'android.hardware.audio.common-V5-ndk.so'),
+    'vendor/lib64/libaudioplatformconverter.qti.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+    'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+    'vendor/lib64/libmisoundfx_aosp_aidl_ext.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+    'vendor/lib64/libqtigefar.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+    'vendor/lib64/libswspatializeraidl_ext.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+    'vendor/lib64/lib_android_keymaster_keymint_utils.so': blob_fixup()
+        .replace_needed('android.hardware.security.keymint-V4-ndk.so', 'android.hardware.security.keymint-V5-ndk.so'),
+    'vendor/lib64/libkeymint.so': blob_fixup()
+        .replace_needed('android.hardware.security.keymint-V4-ndk.so', 'android.hardware.security.keymint-V5-ndk.so'),
+    'vendor/lib64/libdolbyui.so': blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+    'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
     'vendor/etc/hal_uuid_map_config.xml': blob_fixup()
         .regex_replace(
             r'(\n\n)?\s*<!-- STM KEYMINT[\s\S]*?</uuid_ref_do>',
