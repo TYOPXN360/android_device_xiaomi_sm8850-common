@@ -2437,20 +2437,6 @@ vendor/lib64/soundfx/libozoaidl.so
 
 # Interface libraries that hardware/interfaces builds from AIDL/HIDL
 # definitions; a prebuilt of the same name defines the module twice.
-vendor/lib64/android.hardware.camera.metadata-V1-ndk.so
-vendor/lib64/android.hardware.camera.provider-V1-ndk.so
-vendor/lib64/android.hardware.health-V4-ndk.so
-vendor/lib64/android.hardware.media.c2-V1-ndk.so
-vendor/lib64/android.hardware.power-V6-ndk.so
-vendor/lib64/android.hardware.security.keymint-V3-ndk.so
-vendor/lib64/android.hardware.security.keymint-V4-ndk.so
-vendor/lib64/android.hardware.security.rkp-V3-ndk.so
-vendor/lib64/android.hardware.security.sharedsecret-V1-ndk.so
-vendor/lib64/android.hardware.sensors-V2-ndk.so
-vendor/lib64/android.hardware.uwb-V1-ndk.so
-vendor/lib64/android.hardware.weaver-V2-ndk.so
-vendor/lib64/android.hardware.wifi-V3-ndk.so
-vendor/lib64/android.hardware.wifi.supplicant-V4-ndk.so
 
 # Built by AOSP from frameworks/native sources.
 
@@ -2517,31 +2503,16 @@ odm/etc/backend_conf.xml
 
 # Interface libraries AOSP builds from hardware/interfaces; the
 # prebuilts pull an older graphics.common revision into the build.
-vendor/lib64/android.hardware.camera.device-V2-ndk.so
-vendor/lib64/android.hardware.camera.device-V3-ndk.so
-vendor/lib64/android.hardware.graphics.composer3-V4-ndk.so
-vendor/lib/android.hardware.graphics.common-V5-ndk.so
-vendor/lib/android.hardware.graphics.common-V6-ndk.so
-vendor/lib64/android.hardware.camera.device-V1-ndk.so
-vendor/lib64/android.hardware.graphics.composer3-V2-ndk.so
-vendor/lib64/android.hardware.graphics.composer3-V3-ndk.so
-vendor/lib64/vendor.qti.hardware.display.composer3-V4-ndk.so
 
 # Camera interface libraries that pull an older camera.device
 # revision than the platform builds.
 vendor/lib64/vendor.qti.hardware.camera.offlinecamera-V1-ndk.so
-vendor/lib64/android.hardware.camera.provider-V2-ndk.so
 vendor/lib64/vendor.qti.hardware.camera.offlinecamera-V2-ndk.so
 
 # macOS dylibs. They are useless on Android and some collide with
 # AOSP rust module names, which crashes soong.
 
 # AOSP installs these into the same image; packaging both collides.
-vendor/lib/libc++.so
-vendor/lib64/libclang_rt.ubsan_standalone-aarch64-android.so
-vendor/lib64/libprotobuf-cpp-full-21.12.so
-vendor/lib64/libprotobuf-cpp-lite-21.12.so
-vendor/lib64/libc++.so
 
 vendor/bin/adsprpcd
 vendor/bin/loadalgo
@@ -2675,77 +2646,7 @@ vendor/lib64/libgeofencing.so
 vendor/lib64/libgnss.so
 vendor/lib64/libloc_core.so
 vendor/lib64/liblocation_api.so
-vendor/bin/boringssl_self_test64
-vendor/lib/android.hardware.common-V2-ndk.so
-vendor/lib/android.hardware.graphics.allocator-V2-ndk.so
-vendor/lib64/android.frameworks.cameraservice.common-V1-ndk.so
-vendor/lib64/android.frameworks.cameraservice.device-V3-ndk.so
-vendor/lib64/android.frameworks.cameraservice.service-V3-ndk.so
-vendor/lib64/android.frameworks.location.altitude-V2-ndk.so
-vendor/lib64/android.frameworks.sensorservice-V1-ndk.so
-vendor/lib64/android.hardware.audio.common-V3-ndk.so
-vendor/lib64/android.hardware.audio.common-V4-ndk.so
-vendor/lib64/android.hardware.audio.core-V2-ndk.so
-vendor/lib64/android.hardware.audio.core-V3-ndk.so
-vendor/lib64/android.hardware.audio.core.sounddose-V1-ndk.so
-vendor/lib64/android.hardware.audio.core.sounddose-V2-ndk.so
-vendor/lib64/android.hardware.audio.core.sounddose-V3-ndk.so
-vendor/lib64/android.hardware.audio.effect-V2-ndk.so
-vendor/lib64/android.hardware.audio.effect-V3-ndk.so
-vendor/lib64/android.hardware.biometrics.common-V4-ndk.so
-vendor/lib64/android.hardware.biometrics.face-V4-ndk.so
-vendor/lib64/android.hardware.biometrics.fingerprint-V4-ndk.so
-vendor/lib64/android.hardware.bluetooth-V1-ndk.so
-vendor/lib64/android.hardware.bluetooth.audio-V5-ndk.so
-vendor/lib64/android.hardware.bluetooth.finder-V1-ndk.so
-vendor/lib64/android.hardware.bluetooth.lmp_event-V1-ndk.so
-vendor/lib64/android.hardware.bluetooth.ranging-V2-ndk.so
-vendor/lib64/android.hardware.boot-V1-ndk.so
-vendor/lib64/android.hardware.camera.common-V1-ndk.so
-vendor/lib64/android.hardware.camera.metadata-V2-ndk.so
-vendor/lib64/android.hardware.camera.metadata-V3-ndk.so
-vendor/lib64/android.hardware.camera.provider-V3-ndk.so
-vendor/lib64/android.hardware.common.fmq-V1-ndk.so
-vendor/lib64/android.hardware.contexthub-V3-ndk.so
-vendor/lib64/android.hardware.drm-V1-ndk.so
-vendor/lib64/android.hardware.drm.common-V1-ndk.so
-vendor/lib64/android.hardware.dumpstate-V1-ndk.so
-vendor/lib64/android.hardware.gatekeeper-V1-ndk.so
-vendor/lib64/android.hardware.gnss-V4-ndk.so
-vendor/lib64/android.hardware.graphics.allocator-V1-ndk.so
-vendor/lib64/android.hardware.health-V1-ndk.so
-vendor/lib64/android.hardware.ir-V1-ndk.so
-vendor/lib64/android.hardware.keymaster-V4-ndk.so
-vendor/lib64/android.hardware.light-V2-ndk.so
-vendor/lib64/android.hardware.media.bufferpool2-V2-ndk.so
-vendor/lib64/android.hardware.memtrack-V1-ndk.so
-vendor/lib64/android.hardware.nfc-V1-ndk.so
-vendor/lib64/android.hardware.power.stats-V2-ndk.so
-vendor/lib64/android.hardware.radio-V4-ndk.so
-vendor/lib64/android.hardware.radio.config-V4-ndk.so
-vendor/lib64/android.hardware.radio.data-V4-ndk.so
-vendor/lib64/android.hardware.radio.messaging-V4-ndk.so
-vendor/lib64/android.hardware.radio.modem-V4-ndk.so
-vendor/lib64/android.hardware.radio.network-V4-ndk.so
-vendor/lib64/android.hardware.radio.sap-V1-ndk.so
-vendor/lib64/android.hardware.radio.sim-V4-ndk.so
-vendor/lib64/android.hardware.radio.voice-V4-ndk.so
-vendor/lib64/android.hardware.secure_element-V1-ndk.so
-vendor/lib64/android.hardware.security.keymint-V1-ndk.so
-vendor/lib64/android.hardware.security.secureclock-V1-ndk.so
-vendor/lib64/android.hardware.sensors-V3-ndk.so
-vendor/lib64/android.hardware.soundtrigger3-V1-ndk.so
-vendor/lib64/android.hardware.tetheroffload-V1-ndk.so
-vendor/lib64/android.hardware.thermal-V1-ndk.so
-vendor/lib64/android.hardware.thermal-V3-ndk.so
-vendor/lib64/android.hardware.usb-V3-ndk.so
-vendor/lib64/android.hardware.usb.gadget-V1-ndk.so
-vendor/lib64/android.hardware.vibrator-V2-ndk.so
-vendor/lib64/android.hardware.wifi.common-V1-ndk.so
-vendor/lib64/android.hardware.wifi.common-V2-ndk.so
-vendor/lib64/android.hardware.wifi.hostapd-V2-ndk.so
-vendor/lib64/android.hardware.wifi.hostapd-V3-ndk.so
-vendor/lib64/android.hardware.wifi.supplicant-V3-ndk.so
+# - vendor/lib64/android.frameworks.cameraservice.common-V1-ndk.so
 vendor/lib64/android.media.audio.common.types-V2-ndk.so
 vendor/lib64/android.media.audio.common.types-V3-ndk.so
 vendor/lib64/android.media.audio.common.types-V4-ndk.so
@@ -2948,7 +2849,7 @@ vendor/lib64/libdolbyeglcore.so
 vendor/lib64/libdolbyottcameracontrol.so
 vendor/lib64/libqcodec2_dolbydecoderfilter.so
 vendor/lib64/libspatializerparamstorage.so
-vendor/lib64/libswspatializeraidl_ext.so
+vendor/lib64/libswspatializeraidl_ext.so;DISABLE_DEPS
 vendor/lib64/vendor.dolby.dms-V1-ndk.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/vendor.libdpmctmgr.so
@@ -3460,7 +3361,6 @@ odm/lib64/libQnnJsonProfilingReader.so
 odm/lib64/libQnnModelDlc.so
 odm/lib64/libadaptivehdr.so
 odm/lib64/libbarrage.so
-odm/lib64/libc++_shared.so;MODULE_SUFFIX=_odm
 odm/lib64/libclient2slpi.notifier.so
 odm/lib64/libcolortempmode.so
 odm/lib64/libcrussp.so
@@ -3554,7 +3454,6 @@ system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
 system_ext/lib64/vendor.qti.qccsyshal_aidl-halimpl.so
 system_ext/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so
 system_ext/lib64/vendor.xiaomi.hardware.misys.common-V3-ndk.so
-system_ext/lib64/libc++_shared.so
 system_ext/lib64/vendor.qti.qccsyshal_aidl-V1-ndk.so
 system_ext/lib64/vendor.qti.ImsRtpService-V2-ndk.so
 
@@ -4085,7 +3984,6 @@ vendor/lib64/libqcodec2_dolbyenhancementfilter.so
 # - vendor/lib64/libalsautils.so
 # - vendor/lib64/libalsautilsv2.so
 # - vendor/lib64/libandroid_runtime_lazy.so
-# - vendor/lib64/libaudio_aidl_conversion_common_ndk.so
 # - vendor/lib64/libaudioroute.so
 # - vendor/lib64/libaudioutils.so
 # - vendor/lib64/libavservices_minijail.so
@@ -4439,3 +4337,142 @@ vendor/lib64/libqcodec2_dolbyenhancementfilter.so
 # - vendor/lib64/libstatic_assertions.dylib.so
 # - vendor/lib64/libsystem_properties_bindgen_sys.dylib.so
 # - vendor/lib64/libthiserror.dylib.so
+
+# Dependencies pulled in by the HALs and test tools.
+
+
+# Dependencies pulled in by the HALs and test tools.
+vendor/lib64/libmemutils.so
+
+
+# Dependencies pulled in by the HALs and test tools.
+vendor/lib64/libqti-perfd-client.so
+
+
+# eSE utilities, needed by libesesbprovision and libGPQeSE.
+vendor/lib64/hw/libEseUtils.so
+
+
+# Interface libraries AOSP builds from hardware/interfaces; the
+# prebuilts pull an older graphics.common revision into the build.
+# - vendor/lib64/android.hardware.camera.device-V2-ndk.so
+# - vendor/lib64/android.hardware.camera.device-V3-ndk.so
+# - vendor/lib64/android.hardware.graphics.composer3-V4-ndk.so
+# - vendor/lib/android.hardware.graphics.common-V5-ndk.so
+# - vendor/lib/android.hardware.graphics.common-V6-ndk.so
+# - vendor/lib64/android.hardware.camera.device-V1-ndk.so
+# - vendor/lib64/android.hardware.graphics.composer3-V2-ndk.so
+# - vendor/lib64/android.hardware.graphics.composer3-V3-ndk.so
+# - vendor/lib64/vendor.qti.hardware.display.composer3-V4-ndk.so
+
+# AOSP installs these into the same image.
+# - vendor/lib/libc++.so
+# - vendor/lib64/libclang_rt.ubsan_standalone-aarch64-android.so
+# - vendor/lib64/libprotobuf-cpp-full-21.12.so
+# - vendor/lib64/libprotobuf-cpp-lite-21.12.so
+# - vendor/lib64/libc++.so
+# - vendor/bin/boringssl_self_test64
+
+# Two copies: the odm one carries a suffix so it can coexist with the
+# platform one that the vendor libraries link against.
+odm/lib64/libc++_shared.so;MODULE_SUFFIX=_odm
+system_ext/lib64/libc++_shared.so
+
+
+# Name matches a module AOSP builds from source.
+# - vendor/lib64/libOpenCL.so
+
+# Dependencies pulled in by the HALs and test tools.
+vendor/lib64/libOpenCL.so
+
+
+# AIDL interfaces that frameworks/hardware/interfaces builds.
+# - vendor/lib64/android.frameworks.cameraservice.device-V3-ndk.so
+# - vendor/lib64/android.frameworks.cameraservice.service-V3-ndk.so
+# - vendor/lib64/android.frameworks.location.altitude-V2-ndk.so
+# - vendor/lib64/android.frameworks.sensorservice-V1-ndk.so
+
+# Interface libraries built by hardware/interfaces.
+# - vendor/lib64/android.hardware.camera.metadata-V1-ndk.so
+# - vendor/lib64/android.hardware.camera.provider-V1-ndk.so
+# - vendor/lib64/android.hardware.health-V4-ndk.so
+# - vendor/lib64/android.hardware.media.c2-V1-ndk.so
+# - vendor/lib64/android.hardware.power-V6-ndk.so
+# - vendor/lib64/android.hardware.security.keymint-V3-ndk.so
+# - vendor/lib64/android.hardware.security.keymint-V4-ndk.so
+# - vendor/lib64/android.hardware.security.rkp-V3-ndk.so
+# - vendor/lib64/android.hardware.security.sharedsecret-V1-ndk.so
+# - vendor/lib64/android.hardware.sensors-V2-ndk.so
+# - vendor/lib64/android.hardware.uwb-V1-ndk.so
+# - vendor/lib64/android.hardware.weaver-V2-ndk.so
+# - vendor/lib64/android.hardware.wifi-V3-ndk.so
+# - vendor/lib64/android.hardware.wifi.supplicant-V4-ndk.so
+# - vendor/lib64/android.hardware.camera.provider-V2-ndk.so
+# - vendor/lib/android.hardware.common-V2-ndk.so
+# - vendor/lib/android.hardware.graphics.allocator-V2-ndk.so
+# - vendor/lib64/android.hardware.audio.common-V3-ndk.so
+# - vendor/lib64/android.hardware.audio.common-V4-ndk.so
+# - vendor/lib64/android.hardware.audio.core-V2-ndk.so
+# - vendor/lib64/android.hardware.audio.core-V3-ndk.so
+# - vendor/lib64/android.hardware.audio.core.sounddose-V1-ndk.so
+# - vendor/lib64/android.hardware.audio.core.sounddose-V2-ndk.so
+# - vendor/lib64/android.hardware.audio.core.sounddose-V3-ndk.so
+# - vendor/lib64/android.hardware.audio.effect-V2-ndk.so
+# - vendor/lib64/android.hardware.audio.effect-V3-ndk.so
+# - vendor/lib64/android.hardware.biometrics.common-V4-ndk.so
+# - vendor/lib64/android.hardware.biometrics.face-V4-ndk.so
+# - vendor/lib64/android.hardware.biometrics.fingerprint-V4-ndk.so
+# - vendor/lib64/android.hardware.bluetooth-V1-ndk.so
+# - vendor/lib64/android.hardware.bluetooth.audio-V5-ndk.so
+# - vendor/lib64/android.hardware.bluetooth.finder-V1-ndk.so
+# - vendor/lib64/android.hardware.bluetooth.lmp_event-V1-ndk.so
+# - vendor/lib64/android.hardware.bluetooth.ranging-V2-ndk.so
+# - vendor/lib64/android.hardware.boot-V1-ndk.so
+# - vendor/lib64/android.hardware.camera.common-V1-ndk.so
+# - vendor/lib64/android.hardware.camera.metadata-V2-ndk.so
+# - vendor/lib64/android.hardware.camera.metadata-V3-ndk.so
+# - vendor/lib64/android.hardware.camera.provider-V3-ndk.so
+# - vendor/lib64/android.hardware.common.fmq-V1-ndk.so
+# - vendor/lib64/android.hardware.contexthub-V3-ndk.so
+# - vendor/lib64/android.hardware.drm-V1-ndk.so
+# - vendor/lib64/android.hardware.drm.common-V1-ndk.so
+# - vendor/lib64/android.hardware.dumpstate-V1-ndk.so
+# - vendor/lib64/android.hardware.gatekeeper-V1-ndk.so
+# - vendor/lib64/android.hardware.gnss-V4-ndk.so
+# - vendor/lib64/android.hardware.graphics.allocator-V1-ndk.so
+# - vendor/lib64/android.hardware.health-V1-ndk.so
+# - vendor/lib64/android.hardware.ir-V1-ndk.so
+# - vendor/lib64/android.hardware.keymaster-V4-ndk.so
+# - vendor/lib64/android.hardware.light-V2-ndk.so
+# - vendor/lib64/android.hardware.media.bufferpool2-V2-ndk.so
+# - vendor/lib64/android.hardware.memtrack-V1-ndk.so
+# - vendor/lib64/android.hardware.nfc-V1-ndk.so
+# - vendor/lib64/android.hardware.power.stats-V2-ndk.so
+# - vendor/lib64/android.hardware.radio-V4-ndk.so
+# - vendor/lib64/android.hardware.radio.config-V4-ndk.so
+# - vendor/lib64/android.hardware.radio.data-V4-ndk.so
+# - vendor/lib64/android.hardware.radio.messaging-V4-ndk.so
+# - vendor/lib64/android.hardware.radio.modem-V4-ndk.so
+# - vendor/lib64/android.hardware.radio.network-V4-ndk.so
+# - vendor/lib64/android.hardware.radio.sap-V1-ndk.so
+# - vendor/lib64/android.hardware.radio.sim-V4-ndk.so
+# - vendor/lib64/android.hardware.radio.voice-V4-ndk.so
+# - vendor/lib64/android.hardware.secure_element-V1-ndk.so
+# - vendor/lib64/android.hardware.security.keymint-V1-ndk.so
+# - vendor/lib64/android.hardware.security.secureclock-V1-ndk.so
+# - vendor/lib64/android.hardware.sensors-V3-ndk.so
+# - vendor/lib64/android.hardware.soundtrigger3-V1-ndk.so
+# - vendor/lib64/android.hardware.tetheroffload-V1-ndk.so
+# - vendor/lib64/android.hardware.thermal-V1-ndk.so
+# - vendor/lib64/android.hardware.thermal-V3-ndk.so
+# - vendor/lib64/android.hardware.usb-V3-ndk.so
+# - vendor/lib64/android.hardware.usb.gadget-V1-ndk.so
+# - vendor/lib64/android.hardware.vibrator-V2-ndk.so
+# - vendor/lib64/android.hardware.wifi.common-V1-ndk.so
+# - vendor/lib64/android.hardware.wifi.common-V2-ndk.so
+# - vendor/lib64/android.hardware.wifi.hostapd-V2-ndk.so
+# - vendor/lib64/android.hardware.wifi.hostapd-V3-ndk.so
+# - vendor/lib64/android.hardware.wifi.supplicant-V3-ndk.so
+
+# Shared by the audio effect libraries; the fixup below moves it to V5.
+vendor/lib64/libaudio_aidl_conversion_common_ndk.so
