@@ -1898,7 +1898,6 @@ vendor/etc/izat.conf
 vendor/etc/libnfc-SN300_19_2MHZ.conf
 vendor/etc/libnfc-qrd-SN220_19_2MHZ.conf
 vendor/etc/libnfc-qrd-SN220_38_4MHZ.conf
-vendor/etc/linker.config.pb
 vendor/etc/lm/PinnerFeature.xml
 vendor/etc/media_codecs_canoe_v3.xml
 vendor/etc/media_codecs_canoe_v3_vendor.xml
@@ -3275,7 +3274,6 @@ vendor/lib64/libhidparser.so
 vendor/lib64/libreference-ril.so
 vendor/lib64/libril.so
 vendor/lib64/librilutils.so
-vendor/lib64/vendor.qti.hardware.agm-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.pal-V1-ndk.so
 vendor/lib64/libnova.so
 vendor/lib64/libgps.utils.so
@@ -4086,7 +4084,7 @@ vendor/lib64/libqcodec2_dolbyenhancementfilter.so
 # - vendor/lib64/libar-acdb.so
 # - vendor/lib64/libar-gpr.so
 # - vendor/lib64/libar-gsl.so
-# - vendor/lib64/libar-pal.so
+vendor/lib64/libar-pal.so
 # - vendor/lib64/libats.so
 # - vendor/lib64/libaudiochargerlistener.so
 # - vendor/lib64/libbatterylistener.so
