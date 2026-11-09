@@ -159,6 +159,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.security.keymint-V4-ndk.so', 'android.hardware.security.keymint-V5-ndk.so'),
     'vendor/lib64/libkeymint.so': blob_fixup()
         .replace_needed('android.hardware.security.keymint-V4-ndk.so', 'android.hardware.security.keymint-V5-ndk.so'),
+    'vendor/lib64/libcodec2_aidl.so': blob_fixup()
+        .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
+    'vendor/lib64/libcodec2_aidl_noisurface.so': blob_fixup()
+        .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
     'vendor/lib64/libdolbyui.so': blob_fixup()
         .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup()
