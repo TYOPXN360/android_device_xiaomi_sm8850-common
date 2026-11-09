@@ -152,7 +152,10 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libmisoundfx_aosp_aidl_ext.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
     'vendor/lib64/libqtigefar.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
+        .replace_needed('android.hardware.audio.core-V3-ndk.so', 'android.hardware.audio.core-V4-ndk.so')
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
+        .replace_needed('android.hardware.audio.common-V4-ndk.so', 'android.hardware.audio.common-V5-ndk.so'),
     'vendor/lib64/libswspatializeraidl_ext.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
     'vendor/lib64/lib_android_keymaster_keymint_utils.so': blob_fixup()
@@ -164,7 +167,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libcodec2_aidl_noisurface.so': blob_fixup()
         .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
     'vendor/lib64/soundfx/libozoaidl.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
     'vendor/lib64/libdolbyui.so': blob_fixup()
         .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
     'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup()
@@ -174,6 +178,24 @@ blob_fixups: blob_fixups_user_type = {
             r'(\n\n)?\s*<!-- STM KEYMINT[\s\S]*?</uuid_ref_do>',
             '',
         ),
+    'vendor/lib64/soundfx/libdlbvolaidl.so': blob_fixup()
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
+    'vendor/lib64/soundfx/libhwdapaidl.so': blob_fixup()
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
+    'vendor/lib64/soundfx/liblvacfsprocessingaidl.so': blob_fixup()
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
+    'vendor/lib64/soundfx/libmiwndnsprocessingaidl.so': blob_fixup()
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
+    'vendor/lib64/soundfx/libspatializer_aosp_aidl_fourchannel.so': blob_fixup()
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
+    'vendor/lib64/soundfx/libspatializer_aosp_aidl_multichannel.so': blob_fixup()
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
+    'vendor/lib64/soundfx/libspatializer_aosp_aidl_sve.so': blob_fixup()
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
+    'vendor/lib64/soundfx/libswgamedapaidl.so': blob_fixup()
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
+    'vendor/lib64/soundfx/libswspatializeraidl.so': blob_fixup()
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
