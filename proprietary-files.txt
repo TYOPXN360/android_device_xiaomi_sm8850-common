@@ -4493,3 +4493,10 @@ vendor/lib64/hw/android.hardware.bluetooth.ranging@aidl-impl-qti.so
 # - vendor/lib64/vendor.xiaomi.sensor.citsensorservice-V1-ndk.so
 # - vendor/lib64/xiaomi.system.hypsys.common-V1-ndk.so
 
+
+
+# Interfaces and private libraries the tracked blobs need at runtime and
+# that no AOSP module produces.
+system/lib64/android.hidl.memory.block@1.0.so
+system/lib64/libmdnssd.so
+vendor/lib64/libwfdaac_vendor.so
