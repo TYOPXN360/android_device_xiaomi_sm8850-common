@@ -2110,7 +2110,6 @@ vendor/lib/vendor.qti.hardware.display.config-V1-ndk.so
 vendor/lib/vendor.qti.hardware.display.config-V3-ndk.so
 vendor/lib/vendor.qti.hardware.display.config-V4-ndk.so
 vendor/lib/vendor.qti.hardware.display.config-V6-ndk.so
-vendor/lib64/android.se.omapi-V1-ndk.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/hw/vendor.qti.memory.pasrmanager-impl.so
@@ -2647,28 +2646,18 @@ vendor/lib64/libgnss.so
 vendor/lib64/libloc_core.so
 vendor/lib64/liblocation_api.so
 # - vendor/lib64/android.frameworks.cameraservice.common-V1-ndk.so
-vendor/lib64/android.media.audio.common.types-V2-ndk.so
-vendor/lib64/android.media.audio.common.types-V3-ndk.so
-vendor/lib64/android.media.audio.common.types-V4-ndk.so
-vendor/lib64/android.media.audio.eraser.types-V1-ndk.so
-vendor/lib64/android.media.soundtrigger.types-V1-ndk.so
-vendor/lib64/android.system.keystore2-V1-ndk.so
-vendor/lib64/android.system.net.netd-V1-ndk.so
-vendor/lib64/android.system.suspend-V1-ndk.so
 vendor/lib64/libmisoundfx_aosp_aidl_ext.so
-vendor/lib64/soundfx/libdlbvolaidl.so
-vendor/lib64/soundfx/libhwdapaidl.so
-vendor/lib64/soundfx/liblvacfsprocessingaidl.so
-vendor/lib64/soundfx/libspatializer_aosp_aidl_sve.so
-vendor/lib64/soundfx/libmiwndnsprocessingaidl.so
+vendor/lib64/soundfx/libdlbvolaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libhwdapaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/liblvacfsprocessingaidl.so;DISABLE_DEPS
+vendor/lib64/soundfx/libspatializer_aosp_aidl_sve.so;DISABLE_DEPS
+vendor/lib64/soundfx/libmiwndnsprocessingaidl.so;DISABLE_DEPS
 vendor/lib64/soundfx/libquasar.so
 vendor/lib64/soundfx/libswgamedapaidl.so
 vendor/lib64/soundfx/libswspatializeraidl.so
 vendor/lib64/btaudio_offload_if.so
-vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
 vendor/lib64/libbluetooth_audio_session_aidl_qti.so
-vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
 vendor/lib64/libloadalgo_stub.so
@@ -2699,7 +2688,7 @@ vendor/lib64/libmisoundsa_multichannel.so
 vendor/lib64/libmisoundsa_sve.so
 vendor/lib64/libpal_net_if.so
 vendor/lib64/libqasr.so
-vendor/lib64/libqtigefar.so
+vendor/lib64/libqtigefar.so;DISABLE_DEPS
 vendor/lib64/libtiantongpal.so
 vendor/lib64/libultrasound_notify.so
 vendor/lib64/libxlog.so
@@ -3274,7 +3263,7 @@ vendor/lib64/libwfdhdcpcp.so
 vendor/lib64/libwfdhdcpservice_proprietary.so
 vendor/lib64/libwfdmminterface_proprietary.so
 vendor/lib64/libwfdmmservice_proprietary.so
-vendor/lib64/libwfdmmsrc_proprietary.so
+vendor/lib64/libwfdmmsrc_proprietary.so;DISABLE_DEPS
 vendor/lib64/libwfdmodulehdcpsession.so
 vendor/lib64/libwfdrtsp_vendor.so
 vendor/lib64/libwfdsessionmodule.so
@@ -3303,7 +3292,6 @@ vendor/lib64/hw/gralloc.default.so
 vendor/lib64/hw/local_time.default.so
 vendor/lib64/hw/power.default.so
 vendor/lib64/hw/vibrator.default.so
-vendor/lib64/libaconfig_storage_read_api_cc.so
 vendor/lib64/libhardware_legacy.so
 vendor/lib64/libhidparser.so
 vendor/lib64/libpower.so
@@ -3335,10 +3323,6 @@ vendor/lib64/libnova.so
 vendor/lib64/libgps.utils.so
 vendor/lib64/libSEESalt.so
 vendor/lib64/libUSTANative.so
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib64/hw/android.hardware.bluetooth.lmp_event-impl-qti.so
-vendor/lib64/hw/android.hardware.bluetooth.ranging@aidl-impl-qti.so
-vendor/lib64/hw/android.hardware.bluetooth@aidl-impl-qti.so
 odm/lib/rfsa/adsp/libSnpeHtpV81Skel.so
 odm/lib64/hw/consumerir.qcom.so
 odm/lib64/hw/displayfeature.default.so
@@ -3653,8 +3637,8 @@ vendor/lib64/vendor.xiaomi.hardware.camera.synthetic-impl.so
 # Dolby spatializer chain: pulls a second audio AIDL revision into
 # the build, which soong refuses. The effect is optional.
 vendor/lib64/libdolbyencoderprocessor.so
-vendor/lib64/soundfx/libspatializer_aosp_aidl_fourchannel.so
-vendor/lib64/soundfx/libspatializer_aosp_aidl_multichannel.so
+vendor/lib64/soundfx/libspatializer_aosp_aidl_fourchannel.so;DISABLE_DEPS
+vendor/lib64/soundfx/libspatializer_aosp_aidl_multichannel.so;DISABLE_DEPS
 
 # Depends on the removed Dolby processor chain.
 vendor/lib64/libqcodec2_dolbyencoderfilter.so
@@ -4312,7 +4296,6 @@ vendor/lib64/libqcodec2_dolbyenhancementfilter.so
 # - system_ext/lib64/litert/libQnnTFLiteDelegate.so
 # - system_ext/lib64/litert/libqnn_delegate_jni.so
 # - vendor/lib64/hw/libEseUtils.so
-# - vendor/lib64/hw/android.hardware.gnss-aidl-impl-qti.so
 
 # Only the iperf3_quic benchmark needs these; it is not shipped.
 # - system_ext/lib64/libgnutls.so
@@ -4383,7 +4366,6 @@ system_ext/lib64/libc++_shared.so
 # - vendor/lib64/libOpenCL.so
 
 # Dependencies pulled in by the HALs and test tools.
-vendor/lib64/libOpenCL.so
 
 
 # AIDL interfaces that frameworks/hardware/interfaces builds.
@@ -4475,8 +4457,50 @@ vendor/lib64/libOpenCL.so
 # - vendor/lib64/android.hardware.wifi.supplicant-V3-ndk.so
 
 # Shared by the audio effect libraries; the fixup below moves it to V5.
-vendor/lib64/libaudio_aidl_conversion_common_ndk.so
 
 
 # core V4 is the revision that matches the V5 common types the framework
 # builds, so libqtigefar is rewritten to link it.
+
+
+# AIDL interface libraries that system/hardware/interfaces builds.
+# - vendor/lib64/android.media.audio.common.types-V2-ndk.so
+# - vendor/lib64/android.media.audio.common.types-V3-ndk.so
+# - vendor/lib64/android.media.audio.common.types-V4-ndk.so
+# - vendor/lib64/android.media.audio.eraser.types-V1-ndk.so
+
+# Interface libraries built by system/hardware/interfaces.
+# - vendor/lib64/android.media.soundtrigger.types-V1-ndk.so
+
+# Name matches a module AOSP builds from source.
+# - vendor/lib64/libOpenCL.so
+# - vendor/lib64/libaudio_aidl_conversion_common_ndk.so
+
+# Dependencies pulled in by the HALs and test tools.
+vendor/lib64/libOpenCL.so
+
+
+# Interface libraries AOSP generates from the AIDL/HIDL definitions
+# in hardware/interfaces, frameworks and system.
+# - vendor/lib64/android.system.keystore2-V1-ndk.so
+# - vendor/lib64/android.system.net.netd-V1-ndk.so
+# - vendor/lib64/android.system.suspend-V1-ndk.so
+# - vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so
+# - vendor/lib64/hw/android.hardware.bluetooth.lmp_event-impl-qti.so
+# - vendor/lib64/hw/android.hardware.bluetooth.ranging@aidl-impl-qti.so
+# - vendor/lib64/hw/android.hardware.bluetooth@aidl-impl-qti.so
+
+# Vendor HAL implementations for bluetooth and gnss; AOSP only ships
+# the interfaces.
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so
+
+
+# Bluetooth AIDL HAL implementations.
+vendor/lib64/hw/android.hardware.bluetooth@aidl-impl-qti.so
+vendor/lib64/hw/android.hardware.bluetooth.lmp_event-impl-qti.so
+vendor/lib64/hw/android.hardware.bluetooth.ranging@aidl-impl-qti.so
+
+
+# Built by build/make/tools/aconfig.
+# - vendor/lib64/libaconfig_storage_read_api_cc.so
