@@ -137,7 +137,11 @@ blob_fixups: blob_fixups_user_type = {
     # frameworks/av builds against V5. Soong refuses a module that pulls in both
     # versions, so every blob that still asks for V4 is rewritten to V5.
     'vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
+        .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so')
+        .replace_needed('android.hardware.audio.core-V3-ndk.so', 'android.hardware.audio.core-V4-ndk.so')
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
+        .replace_needed('android.hardware.audio.common-V4-ndk.so', 'android.hardware.audio.common-V5-ndk.so'),
     'vendor/lib64/hw/libaudiocorehal.default.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
     'vendor/lib64/hw/libaudiocorehal.qti.so': blob_fixup()
@@ -150,14 +154,16 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
     'vendor/lib64/libmisoundfx_aosp_aidl_ext.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
     'vendor/lib64/libqtigefar.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
         .replace_needed('android.hardware.audio.core-V3-ndk.so', 'android.hardware.audio.core-V4-ndk.so')
         .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
         .replace_needed('android.hardware.audio.common-V4-ndk.so', 'android.hardware.audio.common-V5-ndk.so'),
     'vendor/lib64/libswspatializeraidl_ext.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
     'vendor/lib64/lib_android_keymaster_keymint_utils.so': blob_fixup()
         .replace_needed('android.hardware.security.keymint-V4-ndk.so', 'android.hardware.security.keymint-V5-ndk.so'),
     'vendor/lib64/libkeymint.so': blob_fixup()
@@ -187,7 +193,9 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/soundfx/libmiwndnsprocessingaidl.so': blob_fixup()
         .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
     'vendor/lib64/soundfx/libspatializer_aosp_aidl_fourchannel.so': blob_fixup()
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
+        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
+        .replace_needed('android.hardware.audio.core-V2-ndk.so', 'android.hardware.audio.core-V4-ndk.so')
+        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
     'vendor/lib64/soundfx/libspatializer_aosp_aidl_multichannel.so': blob_fixup()
         .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
     'vendor/lib64/soundfx/libspatializer_aosp_aidl_sve.so': blob_fixup()
