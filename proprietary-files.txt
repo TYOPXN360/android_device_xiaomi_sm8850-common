@@ -4480,5 +4480,3 @@ vendor/lib64/libaudio_aidl_conversion_common_ndk.so
 
 # core V4 is the revision that matches the V5 common types the framework
 # builds, so libqtigefar is rewritten to link it.
-system/lib64/android.hardware.audio.core-V4-ndk.so
-system/lib64/android.hardware.audio.core.sounddose-V4-ndk.so
