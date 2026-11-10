@@ -141,6 +141,9 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so')
                 .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
         .replace_needed('android.hardware.audio.common-V4-ndk.so', 'android.hardware.audio.common-V5-ndk.so'),
+    'vendor/lib64/hw/audio.bluetooth.default.so': blob_fixup()
+        .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so')
+        .replace_needed('android.hardware.audio.common-V4-ndk.so', 'android.hardware.audio.common-V5-ndk.so'),
     'vendor/lib64/hw/libaudiocorehal.default.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
     'vendor/lib64/hw/libaudiocorehal.qti.so': blob_fixup()
@@ -216,6 +219,14 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so'),
     'vendor/lib64/hw/audio.bluetooth_qti.default.so': blob_fixup()
         .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so'),
+    # AOSP init rejects the group and keyword that MIUI's init supports.
+    'system_ext/etc/init/hypsys_system.rc': blob_fixup()
+        .regex_replace(r' product_hyperengine', ''),
+    'system_ext/etc/init/init.miui.cust.rc': blob_fixup()
+        .regex_replace(r'(?m)^(\s*)xiaomi_mount_cust\s*$', r'\1# xiaomi_mount_cust  # not an AOSP init keyword'),
+    # MIUI-only init keyword, not understood by AOSP init.
+    'system_ext/etc/init/mipatch_engine.rc': blob_fixup()
+        .regex_replace(r'(?m)^(\s*)xiaomi_clear_mipatch_retry\s*$', r'\1# xiaomi_clear_mipatch_retry'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

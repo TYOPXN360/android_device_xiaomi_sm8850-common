@@ -52,6 +52,20 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
+# Enable adb without touching developer options and without the RSA prompt.
+# Note: persist.sys.usb.config only takes effect once /data is mounted and the
+# persistent properties are loaded, so this does NOT bring adbd up early enough
+# to observe a boot failure that happens before that point.
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=adb \
+    ro.adb.secure=0
+
+
+# removable_apk_info.xml is a fragment with two sibling <string-array> roots,
+# so xmllint rejects it. Copy it verbatim instead of through the checked path.
+PRODUCT_COPY_FILES += \
+    device/xiaomi/sm8850-common/prebuilt/product/etc/removable_apk_info.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/removable_apk_info.xml
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
@@ -64,7 +78,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.core-V3-ndk.vendor \
     android.hardware.audio.core.sounddose-V1-ndk.vendor \
     android.hardware.audio.core.sounddose-V3-ndk.vendor \
-    android.media.audio.common.types-V4-ndk.vendor \
+    android.media.audio.common.types-V5-ndk.vendor \
     libalsautilsv2.vendor \
     libaudio_aidl_conversion_common_ndk.vendor \
     libaudioutils_shim \
