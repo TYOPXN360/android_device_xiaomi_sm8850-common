@@ -133,100 +133,11 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .add_needed('libaudiobase.so')
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
-    # The audio HAL libraries from this dump link the V4 NDK audio types while
-    # frameworks/av builds against V5. Soong refuses a module that pulls in both
-    # versions, so every blob that still asks for V4 is rewritten to V5.
-    'vendor/lib64/hw/android.hardware.bluetooth.audio_sw.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
-        .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so')
-                .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
-        .replace_needed('android.hardware.audio.common-V4-ndk.so', 'android.hardware.audio.common-V5-ndk.so'),
-    'vendor/lib64/hw/audio.bluetooth.default.so': blob_fixup()
-        .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so')
-        .replace_needed('android.hardware.audio.common-V4-ndk.so', 'android.hardware.audio.common-V5-ndk.so'),
-    'vendor/lib64/hw/libaudiocorehal.default.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
-    'vendor/lib64/hw/libaudiocorehal.qti.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
-    'vendor/lib64/libaudio_aidl_conversion_common_ndk.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
-        .replace_needed('android.hardware.audio.common-V4-ndk.so', 'android.hardware.audio.common-V5-ndk.so'),
-    'vendor/lib64/libaudioplatformconverter.qti.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
-    'vendor/lib64/libmisoundfx_aosp_aidl_ext.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
-    'vendor/lib64/libqtigefar.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
-                .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
-        .replace_needed('android.hardware.audio.common-V4-ndk.so', 'android.hardware.audio.common-V5-ndk.so'),
-    'vendor/lib64/libswspatializeraidl_ext.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
-    'vendor/lib64/lib_android_keymaster_keymint_utils.so': blob_fixup()
-        .replace_needed('android.hardware.security.keymint-V4-ndk.so', 'android.hardware.security.keymint-V5-ndk.so'),
-    'vendor/lib64/libkeymint.so': blob_fixup()
-        .replace_needed('android.hardware.security.keymint-V4-ndk.so', 'android.hardware.security.keymint-V5-ndk.so'),
-    'vendor/lib64/libcodec2_aidl.so': blob_fixup()
-        .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
-    'vendor/lib64/libcodec2_aidl_noisurface.so': blob_fixup()
-        .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
-    'vendor/lib64/soundfx/libozoaidl.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so')
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
-    'vendor/lib64/libdolbyui.so': blob_fixup()
-        .replace_needed('android.hardware.graphics.common-V6-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
-    'vendor/lib64/libwfdmmsrc_proprietary.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
     'vendor/etc/hal_uuid_map_config.xml': blob_fixup()
         .regex_replace(
             r'(\n\n)?\s*<!-- STM KEYMINT[\s\S]*?</uuid_ref_do>',
             '',
         ),
-    'vendor/lib64/soundfx/libdlbvolaidl.so': blob_fixup()
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
-    'vendor/lib64/soundfx/libhwdapaidl.so': blob_fixup()
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
-    'vendor/lib64/soundfx/liblvacfsprocessingaidl.so': blob_fixup()
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
-    'vendor/lib64/soundfx/libmiwndnsprocessingaidl.so': blob_fixup()
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so'),
-    'vendor/lib64/soundfx/libspatializer_aosp_aidl_fourchannel.so': blob_fixup()
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
-                .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
-    'vendor/lib64/soundfx/libspatializer_aosp_aidl_multichannel.so': blob_fixup()
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
-                .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
-    'vendor/lib64/soundfx/libspatializer_aosp_aidl_sve.so': blob_fixup()
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
-                .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
-    'vendor/lib64/soundfx/libswspatializeraidl.so': blob_fixup()
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
-                .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
-    'vendor/lib64/soundfx/libswgamedapaidl.so': blob_fixup()
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
-                .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
-    'vendor/lib64/soundfx/libquasar.so': blob_fixup()
-        .replace_needed('android.hardware.audio.effect-V3-ndk.so', 'android.hardware.audio.effect-V4-ndk.so')
-                .replace_needed('android.media.audio.common.types-V4-ndk.so', 'android.media.audio.common.types-V5-ndk.so'),
-    'vendor/lib64/libbluetooth_audio_session_aidl_qti.so': blob_fixup()
-        .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so'),
-    'vendor/lib64/hw/android.hardware.bluetooth.audio-impl-qti.so': blob_fixup()
-        .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so'),
-    'vendor/lib64/libaudioserviceexampleimpl.so': blob_fixup()
-        .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so'),
-    'vendor/lib64/btaudio_offload_if.so': blob_fixup()
-        .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so'),
-    'vendor/lib64/hw/audio.bluetooth_qti.default.so': blob_fixup()
-        .replace_needed('android.hardware.bluetooth.audio-V5-ndk.so', 'android.hardware.bluetooth.audio-V6-ndk.so'),
-    # AOSP init rejects the group and keyword that MIUI's init supports.
-    'system_ext/etc/init/hypsys_system.rc': blob_fixup()
-        .regex_replace(r' product_hyperengine', ''),
-    'system_ext/etc/init/init.miui.cust.rc': blob_fixup()
-        .regex_replace(r'(?m)^(\s*)xiaomi_mount_cust\s*$', r'\1# xiaomi_mount_cust  # not an AOSP init keyword'),
-    # MIUI-only init keyword, not understood by AOSP init.
-    'system_ext/etc/init/mipatch_engine.rc': blob_fixup()
-        .regex_replace(r'(?m)^(\s*)xiaomi_clear_mipatch_retry\s*$', r'\1# xiaomi_clear_mipatch_retry'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(

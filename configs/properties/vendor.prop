@@ -240,12 +240,14 @@ vendor.perf.framepacing.enable=1
 vendor.perf.qfps.enable=1
 
 # QCOM
+ro.soc.manufacturer=QTI
 ro.vendor.board.family=f-canoe
 
 # UWU device identity
-# ro.soc.* lives in product.prop, which is where the platform declares the
-# SoC; keeping a second copy here would fight with it.
+ro.soc.model=SM8850
+ro.soc.marketing_name=Snapdragon 8 Elite Gen 5
 ro.uwu.device=1
+ro.uwu.cpu=songyuan
 ro.product.uwu.name=uwu_songyuan
 
 # QCOMsysD

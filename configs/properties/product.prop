@@ -1,10 +1,3 @@
-# SoC information
-# The platform reports the Snapdragon marketing name here rather than the
-# internal SM8850 part number, which is what the settings UI and the Play
-# Store show.
-ro.soc.manufacturer=Qualcomm
-ro.soc.model=Snapdragon 8 Elite Gen 5
-
 # Audio
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
