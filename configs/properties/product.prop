@@ -27,3 +27,8 @@ bluetooth.profile.pan.panu.enabled=true
 bluetooth.profile.pbap.server.enabled=true
 bluetooth.profile.bas.client.enabled=true
 persist.vendor.service.bt.adv_transport=true
+
+# SoC information
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=Snapdragon 8 Elite Gen 5
+ro.soc.marketing_name=Snapdragon 8 Elite Gen 5
