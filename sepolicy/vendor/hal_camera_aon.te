@@ -1,0 +1,15 @@
+# miaon_frame: the AON frame service the camera HAL reserves sensor/CSIPHY
+# through. It publishes IMiAonFrame and runs as its own vendor daemon.
+
+type hal_camera_aon_default, domain;
+type hal_camera_aon_default_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(hal_camera_aon_default)
+
+# Publish the AIDL interface and let the camera HAL talk to it.
+allow hal_camera_aon_default hal_camera_aon_service:service_manager { add find };
+allow hal_camera_default hal_camera_aon_service:service_manager find;
+allow hal_camera_aon_default hal_camera_default:binder call;
+allow hal_camera_default hal_camera_aon_default:binder call;
+
+# Read the AON frame control property that starts and stops the service.

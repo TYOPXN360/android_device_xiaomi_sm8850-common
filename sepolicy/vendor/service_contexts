@@ -58,3 +58,4 @@ vendor.xiaomi.hardware.radio.cdc.IXmRadioCdc/slot2           u:object_r:vendor_h
 vendor.xiaomi.hardware.aek.IAEKService/default               u:object_r:hal_miface_service:s0
 vendor.xiaomi.hardware.aon.IAlwaysOn/miaonservicebymiface    u:object_r:hal_miface_service:s0
 vendor.xiaomi.hardware.aon.auth.IAONAuth/default             u:object_r:hal_miface_service:s0
+vendor.xiaomi.sensor.aonframe.IMiAonFrame/default    u:object_r:hal_camera_aon_service:s0

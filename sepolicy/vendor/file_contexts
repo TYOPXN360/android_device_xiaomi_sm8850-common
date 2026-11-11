@@ -194,3 +194,6 @@
 # Face
 /(odm|vendor/odm)/bin/hw/mifaced                u:object_r:hal_miface_default_exec:s0
 /data/vendor/face(/.*)?                         u:object_r:face_vendor_data_file:s0
+
+# AON frame service (camera)
+/(odm|vendor)/bin/hw/miaon_frame u:object_r:hal_camera_aon_default_exec:s0
