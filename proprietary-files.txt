@@ -712,6 +712,9 @@ vendor/bin/hw/vendor.xiaomi.hardware.displayfeature_aidl-service
 vendor/etc/init/vendor.xiaomi.hardware.displayfeature_aidl-service.rc
 vendor/etc/vintf/manifest/vendor.xiaomi.hardware.displayfeature_aidl-service.xml
 vendor/lib64/libdfintf.so
+system_ext/lib/vendor.xiaomi.hardware.displayfeature@1.0.so
+system_ext/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
+system_ext/lib64/vendor.xiaomi.hardware.displayfeature_aidl-V2-ndk.so;MODULE_SUFFIX=_system_ext
 vendor/lib64/vendor.xiaomi.hardware.displayfeature_aidl-V2-ndk.so
 
 # Dolby
