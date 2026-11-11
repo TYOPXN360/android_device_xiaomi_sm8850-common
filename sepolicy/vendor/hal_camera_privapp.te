@@ -1,0 +1,23 @@
+# MIUICamera runs as a privileged app (priv_app_36 for targetSdk 36) and talks
+# to the Xiaomi camera HALs directly. Without these the preview, capture and
+# video paths all fail with
+#
+#   avc: denied { find } for ... scontext=u:r:priv_app_36:s0
+#     tcontext=u:object_r:hal_postprocservice_service:s0
+#     tclass=service_manager permissive=0
+#
+# and the app only shows a black viewfinder.
+
+# Post-processing HAL (vendor.xiaomi.hardware.postprocservice).
+allow priv_app_36 hal_postprocservice_service:service_manager find;
+
+# Background blur HAL (vendor.xiaomi.hardware.aidlbgservice).
+allow priv_app_36 hal_aidlbgservice_service:service_manager find;
+
+# The other Xiaomi camera HALs the app looks up at startup.
+allow priv_app_36 hal_camera_aon_service:service_manager find;
+allow priv_app_36 hal_dynamic_camera_service:service_manager find;
+
+# Talk to the camera provider that owns those services.
+binder_call(priv_app_36, hal_camera_default)
+binder_call(priv_app_36, hal_camera_aon_default)

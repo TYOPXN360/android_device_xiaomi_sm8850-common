@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     MIUICamera asks for these at first launch. Grant them up front so the
+     app can enumerate the camera as soon as it starts; without CAMERA the
+     Camera2CompatAdapter never gets a camera id and the preview stays black.
+-->
+<exceptions>
+    <exception package="com.android.camera">
+        <permission name="android.permission.CAMERA" fixed="false" />
+        <permission name="android.permission.RECORD_AUDIO" fixed="false" />
+        <permission name="android.permission.ACCESS_FINE_LOCATION" fixed="false" />
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" fixed="false" />
+        <permission name="android.permission.READ_MEDIA_IMAGES" fixed="false" />
+        <permission name="android.permission.READ_MEDIA_VIDEO" fixed="false" />
+        <permission name="android.permission.READ_MEDIA_AUDIO" fixed="false" />
+        <permission name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" fixed="false" />
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" fixed="false" />
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" fixed="false" />
+        <permission name="android.permission.POST_NOTIFICATIONS" fixed="false" />
+        <permission name="android.permission.BLUETOOTH_CONNECT" fixed="false" />
+        <permission name="android.permission.BLUETOOTH_SCAN" fixed="false" />
+        <permission name="android.permission.BLUETOOTH_ADVERTISE" fixed="false" />
+        <permission name="android.permission.MANAGE_EXTERNAL_STORAGE" fixed="false" />
+    </exception>
+</exceptions>

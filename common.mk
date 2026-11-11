@@ -51,6 +51,10 @@ PRODUCT_PACKAGES += \
     otapreopt_script
 
 PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
+# Grant MIUICamera its runtime permissions up front.
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/default-permissions/default-permissions-miuicamera.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-miuicamera.xml
+
 
 # Audio
 PRODUCT_PACKAGES += \
