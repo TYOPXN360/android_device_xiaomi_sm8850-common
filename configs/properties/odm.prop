@@ -49,7 +49,7 @@ ro.vendor.dynamiccamera.ability_level=2
 ro.vendor.display.ai_disp.enable=false
 ro.vendor.display.bl_lut_calib.enable=true
 ro.vendor.display.dobly_dpu.enable=true
-ro.vendor.display.dolbyvision.support=
+ro.vendor.display.dolbyvision.support=true
 ro.vendor.display.framework_thermal_dimming=true
 ro.vendor.display.gallery_darkmode_dither.enable=true
 ro.vendor.display.hwc_set_backlight=1
@@ -69,8 +69,6 @@ ro.vendor.display.uiservice.enable=true
 ro.vendor.display.update_dbi_by_temperature=true
 ro.vendor.display.video_or_camera_fps.support=true
 ro.vendor.display.vivid_calibration.enable=1
-vendor.display.boost_cpu_layer_number_threshold=10
-vendor.display.disable_3d_adaptive_tm=1
 vendor.display.disable_cwb_call=0
 vendor.display.disable_sdr_dimming=0
 vendor.display.disable_stc_dimming=1
@@ -133,3 +131,56 @@ persist.vendor.sensor.mischeck=true
 # Partition
 ro.product.property_source_order=odm,vendor,product,system_ext,system
 
+
+# Display properties from the stock OS4.0.7.0 odm partition. The odm values
+# take precedence over vendor, so the ones that disagree with vendor.prop
+# (disable_query_luts, disable_3d_adaptive_tm, rounded corners, cpu layer
+# threshold) are repeated here with the stock values on purpose.
+debug.config.video.hevchdr10.encode.support=true
+debug.sf.ignore_hwc_physical_display_orientation=true
+persist.vendor.display.cwb_enable=5
+persist.vendor.display.dbi_enable=1
+ro.vendor.cabc.enable=false
+ro.vendor.display.adaptive_hdr.enable=false
+ro.vendor.display.adaptive_hdr2.enable=0
+ro.vendor.display.bt2020.supported=true
+ro.vendor.display.darkmode_dither.enable=true
+ro.vendor.display.dbi.support=qcom
+ro.vendor.display.dualDPU.support=nt72336
+ro.vendor.display.dualDPU_EMVSize=1200,2608
+ro.vendor.display.dynamic_get_brightness_to_nits_spline=true
+ro.vendor.display.dynamic_pu.enable=true
+ro.vendor.display.frame_capture_manager.enable=true
+ro.vendor.display.framemaster.enable=true
+ro.vendor.display.gamehdr_qualitypriority.enable=true
+ro.vendor.display.hyperos.miDualDPU_support=true
+ro.vendor.display.idle_default_fps=60
+ro.vendor.display.jarvisservice.enable=true
+ro.vendor.display.qingshan_eyecare.enable=1
+ro.vendor.display.quickidle.enable=true
+ro.vendor.display.skip_idle_for_90hz=true
+ro.vendor.display.uiservice_local_backup.enable=true
+ro.vendor.display.uiservice_track.enable=true
+ro.vendor.mi_sf.gpu_hdr_virtual_display.enable=true
+ro.vendor.mi_sf.support_aidl_display_config=true
+ro.vendor.mi_sf.support_source_hdr_ProjectionScreen=true
+ro.vendor.nfc.secure_display_optim=1
+vendor.display.antiaging_disable_cwb_downscaling_primary=1
+vendor.display.antiaging_service_retry_wait_time=10
+vendor.display.default_resolution=1200,2608
+vendor.display.disable_ambient_hdr=0
+vendor.display.disable_cwb_downscale=1
+vendor.display.disable_query_luts=0
+vendor.display.disable_system_load_check=1
+vendor.display.dpps_trigger_refresh_delay_frames=4
+vendor.display.enable_brightness_drm_prop=0
+vendor.display.enable_cwb_notify_sensor=1
+vendor.display.enable_fp_monitor=1
+vendor.display.enable_rounded_corner=0
+vendor.display.enable_spr=1
+vendor.display.enable_spr_bypass=1
+vendor.display.pluggable_vsync_prioritized=true
+vendor.display.support_builtin_high_fps_when_pluggable_connected=0
+vendor.display.disable_3d_adaptive_tm=0
+vendor.display.boost_cpu_layer_number_threshold=12
+ro.vendor.display.fod_monitor_default_fps=120
