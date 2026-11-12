@@ -219,6 +219,11 @@ vendor/etc/vintf/manifest/qasr_vintf.xml|c7c183d5deadec39de1f20a64bef630bbbbfe45
 
 # Audio Config
 odm/etc/audio/sku_canoe/adsp_sleep_monitor.conf
+# DisplayFeatureHal reads these on every screen-on. evox ships df_default.xml
+# only, stock ships all three; carry all three so the HAL has the full set.
+odm/etc/df_default.xml
+odm/etc/scene_temp.xml
+odm/etc/setting.xml
 odm/etc/backend_conf.xml
 odm/etc/usecaseKvManager.xml
 vendor/etc/audio/sku_canoe/adsp_sleep_monitor.conf
