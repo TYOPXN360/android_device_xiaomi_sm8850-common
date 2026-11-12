@@ -58,7 +58,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('libtensorflowlite_c.so', 'libtensorflowlite_c_vendor.so'),
     (
         'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl',
-        'odm/lib64/hw/displayfeature.default.so',
         'odm/lib64/libmiXmlParser.so',
         'vendor/bin/hw/audiohalservice.qti',
         'vendor/bin/hw/vendor.qti.hardware.display.composer-service',
@@ -89,7 +88,6 @@ blob_fixups: blob_fixups_user_type = {
         .patchelf_version('0_9')
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
      (
-       'odm/lib64/hw/displayfeature.default.so',
        'odm/lib64/libadaptivehdr.so',
        'odm/lib64/libcolortempmode.so',
        'odm/lib64/libdither.so',
