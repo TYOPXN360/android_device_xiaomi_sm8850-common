@@ -76,6 +76,17 @@ vendor.display.disable_sdr_dimming=0
 vendor.display.disable_stc_dimming=1
 vendor.display.enable_antiaging=1
 vendor.display.enable_demura=1
+# Demura panel calibration. The HAL derives the ReCalibTimeTracker file name
+# from these two halves; without them it falls back to a zero panel id and logs
+# a failed lookup on every screen-on. This does not affect the picture, it just
+# keeps the log quiet.
+vendor.display.demura_primary_panel_override_low=1134
+vendor.display.demura_primary_panel_override_high=8448
+vendor.display.demura_short_timer=5000
+vendor.display.demura_long_timer=600000
+vendor.display.demura_recalib_timer=3600000
+vendor.display.demura_record_timer=1800000
+vendor.display.demura_recalib_timer_divider=1
 vendor.display.enable_hdr10_gpu_target=0
 vendor.display.force_tonemapping=1
 vendor.display.support_function_timer=1
@@ -122,15 +133,3 @@ persist.vendor.sensor.mischeck=true
 # Partition
 ro.product.property_source_order=odm,vendor,product,system_ext,system
 
-# Demura panel calibration. The HAL derives the ReCalibTimeTracker file name
-# from these two halves; without them it falls back to a zero panel id, fails
-# to find mnt/vendor/persist/display/ReCalibTimeTracker_<id>.xml and re-applies
-# the default post-processing on every screen-on, which shows up as a contrast
-# filter that only appears after the first screen-off/on cycle.
-vendor.display.demura_primary_panel_override_low=1134
-vendor.display.demura_primary_panel_override_high=8448
-vendor.display.demura_short_timer=5000
-vendor.display.demura_long_timer=600000
-vendor.display.demura_recalib_timer=3600000
-vendor.display.demura_record_timer=1800000
-vendor.display.demura_recalib_timer_divider=1
