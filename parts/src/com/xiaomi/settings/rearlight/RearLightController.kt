@@ -5,6 +5,7 @@
 
 package com.xiaomi.settings.rearlight
 
+import android.os.SystemClock
 import android.util.Log
 
 /**
@@ -24,6 +25,12 @@ object RearLightController {
     private const val PROP_BATTERY = "persist.sys.rear_light.battery"
     private const val PROP_NOTIFY = "persist.sys.rear_light.notify"
 
+    /**
+     * Bumped after every toggle. The light HAL blocks on this property with
+     * __system_property_wait, so it is woken by the kernel instead of polling.
+     */
+    private const val PROP_GENERATION = "persist.sys.rear_light.gen"
+
     val KEYS = listOf("rear_light_enable", "rear_light_battery", "rear_light_notify")
 
     private fun propFor(key: String): String = when (key) {
@@ -42,6 +49,10 @@ object RearLightController {
             val cls = Class.forName("android.os.SystemProperties")
             cls.getMethod("set", String::class.java, String::class.java)
                 .invoke(null, prop, value)
+            // Wake the HAL. It waits on this counter rather than polling, so
+            // every toggle has to move it.
+            cls.getMethod("set", String::class.java, String::class.java)
+                .invoke(null, PROP_GENERATION, SystemClock.elapsedRealtime().toString())
             Log.i(TAG, "applied $prop=$value")
         } catch (t: Throwable) {
             Log.e(TAG, "failed to set $prop=$value", t)

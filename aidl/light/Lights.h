@@ -50,6 +50,10 @@ class Lights : public BnLights {
     std::atomic<bool> mStopPolling{false};
     std::thread mPrefsPoller;
 
+    // Bumped by the settings page on every toggle. The HAL blocks on it so
+    // there is no polling at all.
+    static constexpr const char* kGenerationProp = "persist.sys.rear_light.gen";
+
     // Returns true when any of the three preferences changed.
     bool reloadPreferences();
     void pollPreferences();

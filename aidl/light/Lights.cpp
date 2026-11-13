@@ -13,6 +13,7 @@
 #include <android-base/properties.h>
 
 #include <chrono>
+#include <sys/system_properties.h>
 
 namespace aidl {
 namespace android {
@@ -140,8 +141,29 @@ bool Lights::reloadPreferences() {
 }
 
 void Lights::pollPreferences() {
+    const prop_info* pi = nullptr;
+    uint32_t serial = 0;
+
     while (!mStopPolling) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+        if (pi == nullptr) {
+            pi = __system_property_find(kGenerationProp);
+            if (pi != nullptr) serial = __system_property_serial(pi);
+        }
+
+        if (pi == nullptr) {
+            // The switch has never been touched, so the property does not exist
+            // yet. Nothing to wait on; look again in a minute.
+            std::this_thread::sleep_for(std::chrono::seconds(60));
+        } else {
+            // Blocked in the kernel until the generation counter moves, woken by
+            // a futex when the settings page writes it. The timeout only exists
+            // so a recreated property is noticed.
+            timespec timeout{60, 0};
+            uint32_t newSerial = serial;
+            __system_property_wait(pi, serial, &newSerial, &timeout);
+            serial = newSerial;
+        }
+
         if (mStopPolling) break;
         if (reloadPreferences()) updateNotificationColor();
     }
