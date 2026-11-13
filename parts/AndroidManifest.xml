@@ -51,6 +51,22 @@
                 android:value="-10" />
         </activity>
 
+        <activity
+            android:name=".display.DisplayEnhanceSettingsActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true"
+            android:label="@string/display_enhance_title">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.display" />
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="-9" />
+        </activity>
+
     </application>
 </manifest>
 

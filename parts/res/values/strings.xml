@@ -11,4 +11,9 @@
     <string name="touch_title">Touch Sampling Rate</string>
     <string name="touch_high_sampling_rate_title">High Touch Sampling Rate</string>
     <string name="touch_high_sampling_rate_footer">Increase touchscreen polling rate</string>
+    <!-- Display enhancement settings -->
+    <string name="display_enhance_title">AI Display Enhancement</string>
+    <string name="display_enhance_switch_title">Enable AI display enhancement</string>
+    <string name="display_enhance_switch_summary">Runs the Novatek visual display processor, which handles super resolution, motion compensation, SDR to HDR conversion and the 3D LUT for video and games</string>
+    <string name="display_enhance_footer">Turning this off leaves the panel driven by the display processor alone. No reboot required.</string>
 </resources>
