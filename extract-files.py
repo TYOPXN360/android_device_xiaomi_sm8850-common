@@ -56,11 +56,40 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/liblistensoundmodel2vendor.so',
     ): blob_fixup()
         .replace_needed('libtensorflowlite_c.so', 'libtensorflowlite_c_vendor.so'),
+    (
+        'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl',
+        'odm/lib64/hw/displayfeature.default.so',
+        'odm/lib64/libmiXmlParser.so',
+        'vendor/bin/hw/audiohalservice.qti',
+        'vendor/bin/hw/vendor.qti.hardware.display.composer-service',
+        'vendor/bin/poweropt-service',
+        'vendor/bin/poweropt-service',
+        'vendor/bin/qsap_mpamsvc',
+        'vendor/lib64/hw/libaudioeffecthal.qti.so',
+        'vendor/lib64/libaodoptfeature.so',
+        'vendor/lib64/libaudiocloudctrl.so',
+        'vendor/lib64/libcamerapoweroptfeature.so',
+        'vendor/lib64/libdemura_oem_plugin.so',
+        'vendor/lib64/libgamepoweroptfeature.so',
+        'vendor/lib64/liblearningmodule.so',
+        'vendor/lib64/liboffscreenpoweroptfeature.so',
+        'vendor/lib64/libpowercallback.so',
+        'vendor/lib64/libpowercore.so',
+        'vendor/lib64/libpsmoptfeature.so',
+        'vendor/lib64/libstandbyfeature.so',
+        'vendor/lib64/libvideooptfeature.so',
+        'vendor/lib64/libxlog.so',
+        'vendor/lib64/soundfx/libquasar.so',
+        'vendor/lib64/hw/libaudiocorehal.qti.so',
+        'vendor/lib64/libsdmcore.so',
+    ): blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     # patchelf 0.18 (the extract_utils default) relocates this blob's program
     # header table to a vaddr inconsistent with its LOAD segments; bionic then
     # rejects it with "missing PT_DYNAMIC". 0.9 patches it correctly.
     'vendor/lib64/libsdmclient.so': blob_fixup()
-        .patchelf_version('0_9'),
+        .patchelf_version('0_9')
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
      (
        'odm/lib64/hw/displayfeature.default.so',
        'odm/lib64/libadaptivehdr.so',
