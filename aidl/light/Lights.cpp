@@ -13,6 +13,8 @@
 #include <android-base/properties.h>
 
 #include <chrono>
+#include <cstdlib>
+#include <string>
 #include <sys/system_properties.h>
 
 namespace aidl {
@@ -137,7 +139,22 @@ bool Lights::reloadPreferences() {
     mBatteryLightEnabled = battery;
     mNotificationLightEnabled = notification;
 
-    return changed;
+    // Optional colour and period overrides from the settings page. An empty
+    // colour or a zero period means "leave the framework value alone".
+    uint32_t colour = 0;
+    const std::string colourValue = ::android::base::GetProperty(kColorProp, "");
+    if (!colourValue.empty()) {
+        colour = static_cast<uint32_t>(std::strtoul(colourValue.c_str(), nullptr, 16));
+    }
+    const uint32_t period = static_cast<uint32_t>(
+            std::strtoul(::android::base::GetProperty(kPeriodProp, "0").c_str(), nullptr, 10));
+
+    const bool overridesChanged = (colour != mColorOverride.load()) ||
+                                  (period != mPeriodOverride.load());
+    mColorOverride = colour;
+    mPeriodOverride = period;
+
+    return changed || overridesChanged;
 }
 
 void Lights::pollPreferences() {
@@ -187,6 +204,17 @@ void Lights::updateNotificationColor() {
         } else if (mBatteryLightEnabled && mLastBatteryState.isLit()) {
             state = mLastBatteryState;
         }
+    }
+
+    if (const uint32_t colour = mColorOverride.load()) {
+        state.color.red = (colour >> 16) & 0xFF;
+        state.color.green = (colour >> 8) & 0xFF;
+        state.color.blue = colour & 0xFF;
+    }
+    if (const uint32_t period = mPeriodOverride.load()) {
+        state.effect.type = Effect::Type::TIMED;
+        state.effect.timed.onMs = period / 2;
+        state.effect.timed.offMs = period - (period / 2);
     }
 
     mDevices.setNotificationState(state);

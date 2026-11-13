@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string-array name="rear_light_color_entries">
+        <item>@string/rear_light_color_auto</item>
+        <item>@string/rear_light_color_red</item>
+        <item>@string/rear_light_color_green</item>
+        <item>@string/rear_light_color_blue</item>
+        <item>@string/rear_light_color_cyan</item>
+        <item>@string/rear_light_color_purple</item>
+        <item>@string/rear_light_color_white</item>
+    </string-array>
+    <string-array name="rear_light_color_values" translatable="false">
+        <item></item>
+        <item>FF0000</item>
+        <item>00FF00</item>
+        <item>0000FF</item>
+        <item>00FFFF</item>
+        <item>FF00FF</item>
+        <item>FFFFFF</item>
+    </string-array>
+    <string-array name="rear_light_period_entries">
+        <item>@string/rear_light_period_system</item>
+        <item>@string/rear_light_period_slow</item>
+        <item>@string/rear_light_period_normal</item>
+        <item>@string/rear_light_period_fast</item>
+    </string-array>
+    <string-array name="rear_light_period_values" translatable="false">
+        <item>0</item>
+        <item>2000</item>
+        <item>1000</item>
+        <item>500</item>
+    </string-array>
+</resources>

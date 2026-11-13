@@ -29,4 +29,20 @@
     <string name="touch_entry_summary">Raise the touchscreen polling rate</string>
     <string name="display_enhance_entry_summary">Drive the Novatek display processor</string>
     <string name="rear_light_entry_summary">Control the LED on the back</string>
+    <!-- Rear light colour and breathing period -->
+    <string name="rear_light_color_title">Light colour</string>
+    <string name="rear_light_color_summary">Colour used for the notifications and charging light</string>
+    <string name="rear_light_color_auto">Automatic</string>
+    <string name="rear_light_color_red">Red</string>
+    <string name="rear_light_color_green">Green</string>
+    <string name="rear_light_color_blue">Blue</string>
+    <string name="rear_light_color_cyan">Cyan</string>
+    <string name="rear_light_color_purple">Purple</string>
+    <string name="rear_light_color_white">White</string>
+    <string name="rear_light_period_title">Breathing speed</string>
+    <string name="rear_light_period_summary">How fast the rear light pulses</string>
+    <string name="rear_light_period_system">Automatic</string>
+    <string name="rear_light_period_slow">Slow</string>
+    <string name="rear_light_period_normal">Normal</string>
+    <string name="rear_light_period_fast">Fast</string>
 </resources>

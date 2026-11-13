@@ -52,6 +52,13 @@ class Lights : public BnLights {
 
     // Bumped by the settings page on every toggle. The HAL blocks on it so
     // there is no polling at all.
+    // Optional overrides written by the settings page. Empty colour or zero
+    // period means "keep whatever the framework asked for".
+    static constexpr const char* kColorProp = "persist.sys.rear_light.color";
+    static constexpr const char* kPeriodProp = "persist.sys.rear_light.period";
+    std::atomic<uint32_t> mColorOverride{0};
+    std::atomic<uint32_t> mPeriodOverride{0};
+
     static constexpr const char* kGenerationProp = "persist.sys.rear_light.gen";
 
     // Returns true when any of the three preferences changed.

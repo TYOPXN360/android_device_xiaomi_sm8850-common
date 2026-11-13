@@ -24,6 +24,25 @@
         android:summary="@string/rear_light_notify_summary"
         android:dependency="rear_light_enable" />
 
+
+    <DropDownPreference
+        android:key="rear_light_color"
+        android:title="@string/rear_light_color_title"
+        android:summary="@string/rear_light_color_summary"
+        android:entries="@array/rear_light_color_entries"
+        android:entryValues="@array/rear_light_color_values"
+        android:defaultValue=""
+        android:dependency="rear_light_enable" />
+
+    <DropDownPreference
+        android:key="rear_light_period"
+        android:title="@string/rear_light_period_title"
+        android:summary="@string/rear_light_period_summary"
+        android:entries="@array/rear_light_period_entries"
+        android:entryValues="@array/rear_light_period_values"
+        android:defaultValue="0"
+        android:dependency="rear_light_enable" />
+
     <com.android.settingslib.widget.FooterPreference
         android:title="@string/rear_light_footer"
         android:selectable="false" />

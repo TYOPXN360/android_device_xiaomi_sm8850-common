@@ -31,4 +31,20 @@
     <string name="touch_entry_summary">提高触摸屏轮询频率</string>
     <string name="display_enhance_entry_summary">驱动联咏显示处理芯片</string>
     <string name="rear_light_entry_summary">控制背部 LED 指示灯</string>
+    <!-- 背灯颜色与呼吸频率 -->
+    <string name="rear_light_color_title">灯光颜色</string>
+    <string name="rear_light_color_summary">通知灯与充电灯使用的颜色</string>
+    <string name="rear_light_color_auto">自动</string>
+    <string name="rear_light_color_red">红色</string>
+    <string name="rear_light_color_green">绿色</string>
+    <string name="rear_light_color_blue">蓝色</string>
+    <string name="rear_light_color_cyan">青色</string>
+    <string name="rear_light_color_purple">紫色</string>
+    <string name="rear_light_color_white">白色</string>
+    <string name="rear_light_period_title">呼吸速度</string>
+    <string name="rear_light_period_summary">背灯闪烁的快慢</string>
+    <string name="rear_light_period_system">自动</string>
+    <string name="rear_light_period_slow">慢</string>
+    <string name="rear_light_period_normal">标准</string>
+    <string name="rear_light_period_fast">快</string>
 </resources>
