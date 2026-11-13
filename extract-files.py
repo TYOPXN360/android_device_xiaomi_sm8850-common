@@ -80,6 +80,8 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib64/libvideooptfeature.so',
         'vendor/lib64/libxlog.so',
         'vendor/lib64/soundfx/libquasar.so',
+        'vendor/lib64/hw/libaudiocorehal.qti.so',
+        'vendor/lib64/libsdmcore.so',
     ): blob_fixup()
         .replace_needed('libtinyxml2.so', 'libtinyxml2-v36.so'),
     # patchelf 0.18 (the extract_utils default) relocates this blob's program
