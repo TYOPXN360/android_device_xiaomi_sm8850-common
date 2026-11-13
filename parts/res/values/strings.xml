@@ -25,4 +25,8 @@
     <string name="rear_light_notify_title">Notification pulse</string>
     <string name="rear_light_notify_summary">Breathe the rear light when a notification arrives</string>
     <string name="rear_light_footer">Camera and microphone indicators are always shown while those are in use.</string>
+    <!-- List summaries shown in the Settings entry -->
+    <string name="touch_entry_summary">Raise the touchscreen polling rate</string>
+    <string name="display_enhance_entry_summary">Drive the Novatek display processor</string>
+    <string name="rear_light_entry_summary">Control the LED on the back</string>
 </resources>

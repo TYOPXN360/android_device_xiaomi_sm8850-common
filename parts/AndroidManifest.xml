@@ -49,7 +49,13 @@
             <meta-data
                 android:name="com.android.settings.order"
                 android:value="-10" />
-        </activity>
+                    <meta-data
+                android:name="com.android.settings.group_key"
+                android:value="category_other" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:value="@string/touch_entry_summary" />
+</activity>
 
         <activity
             android:name=".display.DisplayEnhanceSettingsActivity"
@@ -65,7 +71,13 @@
             <meta-data
                 android:name="com.android.settings.order"
                 android:value="-9" />
-        </activity>
+                    <meta-data
+                android:name="com.android.settings.group_key"
+                android:value="category_other" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:value="@string/display_enhance_entry_summary" />
+</activity>
 
         <activity
             android:name=".rearlight.RearLightSettingsActivity"
@@ -77,11 +89,14 @@
             </intent-filter>
             <meta-data
                 android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.display" />
+                android:value="com.android.settings.category.ia.sound" />
             <meta-data
                 android:name="com.android.settings.order"
                 android:value="-8" />
-        </activity>
+                    <meta-data
+                android:name="com.android.settings.summary"
+                android:value="@string/rear_light_entry_summary" />
+</activity>
 
     </application>
 </manifest>

@@ -27,4 +27,8 @@
     <string name="rear_light_notify_title">通知呼吸灯</string>
     <string name="rear_light_notify_summary">收到通知时背部呼吸灯闪烁提示</string>
     <string name="rear_light_footer">相机与麦克风使用期间的指示灯始终显示，不受开关影响。</string>
+    <!-- 设置列表中的简介 -->
+    <string name="touch_entry_summary">提高触摸屏轮询频率</string>
+    <string name="display_enhance_entry_summary">驱动联咏显示处理芯片</string>
+    <string name="rear_light_entry_summary">控制背部 LED 指示灯</string>
 </resources>
