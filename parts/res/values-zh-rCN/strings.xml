@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- App Name -->
+    <string name="app_name">小米部件</string>
+
+    <!-- Touch settings -->
+    <string name="touch_title">触摸采样率</string>
+    <string name="touch_high_sampling_rate_title">高触摸采样率</string>
+    <string name="touch_high_sampling_rate_footer">提高触摸屏的轮询频率</string>
+
+    <!-- Display enhancement settings -->
+    <string name="display_enhance_title">AI 显示增强</string>
+    <string name="display_enhance_switch_title">启用 AI 显示增强</string>
+    <string name="display_enhance_switch_summary">驱动联咏显示处理芯片，负责视频与游戏场景下的超分辨率、动态画面补偿、SDR 转 HDR 以及 3D LUT 调色</string>
+    <string name="display_enhance_footer">关闭后画面将仅由显示处理器输出，无需重启。</string>
+
+    <!-- Rear light (AW21024) settings -->
+    <string name="rear_light_title">背部呼吸灯</string>
+    <string name="rear_light_master_title">背部呼吸灯</string>
+    <string name="rear_light_master_summary">手机背部 LED 的总开关</string>
+    <string name="rear_light_battery_title">充电灯效</string>
+    <string name="rear_light_battery_summary">充电时背部呼吸灯保持常亮</string>
+    <string name="rear_light_notify_title">通知呼吸灯</string>
+    <string name="rear_light_notify_summary">收到通知时背部呼吸灯闪烁提示</string>
+    <string name="rear_light_footer">相机与麦克风使用期间的指示灯始终显示，不受开关影响。</string>
+</resources>
