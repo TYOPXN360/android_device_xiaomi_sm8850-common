@@ -79,15 +79,6 @@ blob_fixups: blob_fixups_user_type = {
        'odm/lib64/libvideomode.so',
      ): blob_fixup()
         .replace_needed('android.hardware.sensors-V2-ndk.so','android.hardware.sensors-V3-ndk.so'),
-     (
-       # Built against android.hardware.security.keymint V4; this tree
-       # only builds V5.
-       'odm/lib64/libmt_keysoter.so',
-    ): blob_fixup()
-        .replace_needed(
-            'android.hardware.security.keymint-V4-ndk.so',
-            'android.hardware.security.keymint-V5-ndk.so',
-        ),
     (
        'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl',
        # Built against android.hardware.graphics.common V6.

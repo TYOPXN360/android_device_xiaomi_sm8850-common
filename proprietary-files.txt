@@ -1781,12 +1781,6 @@ vendor/etc/vintf/manifest/vendor.qti.hardware.soter-service.xml
 vendor/lib64/hw/vendor.qti.hardware.soter-impl.so
 vendor/lib64/hw/qc_bcs_lib.so
 vendor/lib64/vendor.qti.hardware.soter-V1-ndk.so
-odm/bin/mtd_keysoter
-odm/lib64/libmt_keysoter.so
-odm/etc/init/vendor.xiaomi.hardware.aidl.mtkeysoter-service.rc
-odm/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.aidl.mtkeysoter.xml
-vendor/bin/SoterProvisioningTool
-vendor/lib64/vendor.xiaomi.hardware.aidl.mtkeysoter-V1-ndk.so
 
 # SSR
 vendor/bin/ssr_diag
