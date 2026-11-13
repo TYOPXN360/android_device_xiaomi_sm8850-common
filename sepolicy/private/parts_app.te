@@ -20,3 +20,6 @@ set_prop(parts_app, disp_enhance_prop)
 # Rear light switches.
 set_prop(parts_app, rear_light_prop)
 get_prop(parts_app, rear_light_prop)
+
+# The light HAL reads the rear light switches.
+allow hal_light_default rear_light_prop:file r_file_perms;

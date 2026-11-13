@@ -1,7 +1,10 @@
 # Backs the AI display enhancement switch. init owns the triggers that start and
-# stop hal_visdisplaysrv_default when this changes.
+# stop hal_visdisplaysrv_default when this changes, and init reads properties
+# through the property service itself, so internal visibility is enough.
 system_internal_prop(disp_enhance_prop)
 
 # Rear light switches, written by the XiaomiParts rear light page and polled by
-# the light HAL.
-system_internal_prop(rear_light_prop)
+# the light HAL. This has to be public: hal_light_default is not a system
+# internal domain, and with the internal type every read is denied, which leaves
+# the HAL seeing the default value forever and the switches doing nothing.
+system_public_prop(rear_light_prop)
