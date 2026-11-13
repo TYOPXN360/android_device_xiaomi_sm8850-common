@@ -794,6 +794,11 @@ vendor/lib64/libdolbyclstc.so
 vendor/lib64/libdolbydecoderprocessor.so
 vendor/lib64/libdolbyeglcore.so
 vendor/lib64/libdolbyottcameracontrol.so
+vendor/lib64/libdolbyencoderprocessor.so
+vendor/lib64/libdolbyproxyandroid.so
+vendor/lib64/libdolbyui.so
+vendor/lib64/libqcodec2_dolbyencoderfilter.so
+vendor/lib64/libqcodec2_dolbyenhancementfilter.so
 vendor/lib64/libqcodec2_dolbydecoderfilter.so
 vendor/lib64/libspatializerparamstorage.so
 vendor/lib64/libswspatializeraidl_ext.so;DISABLE_DEPS

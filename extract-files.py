@@ -110,6 +110,8 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.sensors-V2-ndk.so','android.hardware.sensors-V3-ndk.so'),
      (
        'odm/bin/hw/vendor.xiaomi.sensor.citsensorservice.aidl',
+       # Built against android.hardware.graphics.common V6.
+       'vendor/lib64/libdolbyui.so',
      ): blob_fixup()
         .replace_needed('android.hardware.graphics.common-V6-ndk.so','android.hardware.graphics.common-V7-ndk.so'),
     (
