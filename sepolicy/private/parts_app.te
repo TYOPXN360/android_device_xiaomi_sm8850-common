@@ -16,3 +16,7 @@ allow parts_app system_app_data_file:lnk_file create_file_perms;
 
 # The AI display enhancement switch only exists to flip this property.
 set_prop(parts_app, disp_enhance_prop)
+
+# Rear light switches.
+set_prop(parts_app, rear_light_prop)
+get_prop(parts_app, rear_light_prop)

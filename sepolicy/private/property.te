@@ -1,3 +1,7 @@
 # Backs the AI display enhancement switch. init owns the triggers that start and
 # stop hal_visdisplaysrv_default when this changes.
 system_internal_prop(disp_enhance_prop)
+
+# Rear light switches, written by the XiaomiParts rear light page and polled by
+# the light HAL.
+system_internal_prop(rear_light_prop)

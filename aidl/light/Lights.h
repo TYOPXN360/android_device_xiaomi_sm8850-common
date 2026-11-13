@@ -9,7 +9,9 @@
 #include <models/State.h>
 
 #include <aidl/android/hardware/light/BnLights.h>
+#include <atomic>
 #include <mutex>
+#include <thread>
 
 namespace aidl {
 namespace android {
@@ -19,6 +21,7 @@ namespace light {
 class Lights : public BnLights {
   public:
     Lights();
+    ~Lights();
 
     ndk::ScopedAStatus setLightState(int32_t id, const HwLightState& hwLightState) override;
     ndk::ScopedAStatus getLights(std::vector<HwLight>* _aidl_return) override;
@@ -36,6 +39,20 @@ class Lights : public BnLights {
     State mLastMicrophoneState;
     State mLastCameraState;
     std::mutex mLedMutex;
+
+    // Rear light preferences, read from properties written by the settings page.
+    // The HAL cannot read Settings.System, and system properties are the only
+    // channel available to a vendor process.
+    std::atomic<bool> mRearLightEnabled{true};
+    std::atomic<bool> mBatteryLightEnabled{true};
+    std::atomic<bool> mNotificationLightEnabled{true};
+
+    std::atomic<bool> mStopPolling{false};
+    std::thread mPrefsPoller;
+
+    // Returns true when any of the three preferences changed.
+    bool reloadPreferences();
+    void pollPreferences();
 
     void updateNotificationColor();
 };

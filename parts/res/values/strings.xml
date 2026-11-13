@@ -16,4 +16,13 @@
     <string name="display_enhance_switch_title">Enable AI display enhancement</string>
     <string name="display_enhance_switch_summary">Runs the Novatek visual display processor, which handles super resolution, motion compensation, SDR to HDR conversion and the 3D LUT for video and games</string>
     <string name="display_enhance_footer">Turning this off leaves the panel driven by the display processor alone. No reboot required.</string>
+    <!-- Rear light (AW21024) settings -->
+    <string name="rear_light_title">Rear Light</string>
+    <string name="rear_light_master_title">Rear light</string>
+    <string name="rear_light_master_summary">Master switch for the LED on the back of the phone</string>
+    <string name="rear_light_battery_title">Charging light</string>
+    <string name="rear_light_battery_summary">Keep the rear light steady while charging</string>
+    <string name="rear_light_notify_title">Notification pulse</string>
+    <string name="rear_light_notify_summary">Breathe the rear light when a notification arrives</string>
+    <string name="rear_light_footer">Camera and microphone indicators are always shown while those are in use.</string>
 </resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/rear_light_title">
+
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:key="rear_light_enable"
+        android:title="@string/rear_light_master_title"
+        android:summary="@string/rear_light_master_summary" />
+
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:key="rear_light_battery"
+        android:title="@string/rear_light_battery_title"
+        android:summary="@string/rear_light_battery_summary"
+        android:dependency="rear_light_enable" />
+
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:key="rear_light_notify"
+        android:title="@string/rear_light_notify_title"
+        android:summary="@string/rear_light_notify_summary"
+        android:dependency="rear_light_enable" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:title="@string/rear_light_footer"
+        android:selectable="false" />
+
+</PreferenceScreen>
