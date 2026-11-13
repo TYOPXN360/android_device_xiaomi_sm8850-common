@@ -122,11 +122,11 @@ Lights::~Lights() {
 
 bool Lights::reloadPreferences() {
     const bool enabled =
-            android::base::GetBoolProperty("persist.sys.rear_light.enable", true);
+            ::android::base::GetBoolProperty("persist.sys.rear_light.enable", true);
     const bool battery =
-            android::base::GetBoolProperty("persist.sys.rear_light.battery", true);
+            ::android::base::GetBoolProperty("persist.sys.rear_light.battery", true);
     const bool notification =
-            android::base::GetBoolProperty("persist.sys.rear_light.notify", true);
+            ::android::base::GetBoolProperty("persist.sys.rear_light.notify", true);
 
     const bool changed = (enabled != mRearLightEnabled.load()) ||
                          (battery != mBatteryLightEnabled.load()) ||
