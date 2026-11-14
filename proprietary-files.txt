@@ -482,7 +482,7 @@ system/etc/sysconfig/qti_whitelist.xml
 system/framework/WfdCommon.jar;BOOT_JAR|b9fd0baae787d8bc4041e7d79411c3a452e094a8
 system/lib64/libskuparser_cpp.so;DISABLE_DEPS
 system/lib64/libskuparser_ffi.so;MAKE_COPY_RULE_ONLY
-system/lib64/libxml_rust.dylib.so
+system/lib64/libxml_rust.dylib.so;MAKE_COPY_RULE_ONLY
 system/lib64/libxqos.so
 system/lib64/vendor.qti.diaghal-V1-ndk.so:system_ext/lib64/vendor.qti.diaghal-V1-ndk.so
 system_ext/app/ImsDataChannelService/ImsDataChannelService.apk
