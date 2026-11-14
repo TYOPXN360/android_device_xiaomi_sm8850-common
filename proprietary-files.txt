@@ -480,6 +480,10 @@ system/etc/permissions/uimremoteclient.xml
 system/etc/permissions/uimremoteserver.xml
 system/etc/sysconfig/qti_whitelist.xml
 system/framework/WfdCommon.jar;BOOT_JAR|b9fd0baae787d8bc4041e7d79411c3a452e094a8
+system/lib64/libskuparser_cpp.so
+system/lib64/libskuparser_ffi.so
+system/lib64/libxml_rust.dylib.so
+system/lib64/libxqos.so
 system/lib64/vendor.qti.diaghal-V1-ndk.so:system_ext/lib64/vendor.qti.diaghal-V1-ndk.so
 system_ext/app/ImsDataChannelService/ImsDataChannelService.apk
 system_ext/app/QCC/QCC.apk
@@ -540,12 +544,15 @@ system_ext/lib64/lib-imsvtextutils.so
 system_ext/lib64/lib-imsvtutils.so
 system_ext/lib64/libSurfaceUtil_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libSurfaceUtil_jni.so
 system_ext/lib64/libc++_shared.so
+system_ext/lib64/libcameraimpl.so
 system_ext/lib64/libdiag_system.so
 system_ext/lib64/libdiagatbparser_system.so
 system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so
 system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmrtpdecoder.so|7971b5de27f7105fd77a15e5fca5401ad8b878a6
 system_ext/lib64/libmmrtpencoder.so|660417edcd28d0a89b87b34609fdb5f89856b8f5
+system_ext/lib64/libmodemenhance_aidl_client.so
+system_ext/lib64/libmqsas.so
 system_ext/lib64/libqcc.so
 system_ext/lib64/libqcc_file_agent_sys.so
 system_ext/lib64/libqccdme.so
