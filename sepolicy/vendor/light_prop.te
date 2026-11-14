@@ -1,0 +1,4 @@
+# The light HAL reads the rear light switch properties. system_public_prop does
+# not cover a vendor HAL, and this rule cannot live in the system_ext policy
+# because hal_light_default is not visible from there.
+allow hal_light_default rear_light_prop:file r_file_perms;

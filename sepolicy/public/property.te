@@ -1,0 +1,6 @@
+# Rear light switches, written by the XiaomiParts rear light page and read by the
+# light HAL. Declared in the public directory so both sides of the system_ext and
+# vendor split can reference the type: system_public_prop alone does not grant
+# hal_light_default read access, so the allowance is spelled out in the vendor
+# policy.
+system_public_prop(rear_light_prop)
