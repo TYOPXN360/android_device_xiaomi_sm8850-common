@@ -197,3 +197,7 @@
 
 # AON frame service (camera)
 /(odm|vendor)/bin/hw/miaon_frame u:object_r:hal_camera_aon_default_exec:s0
+
+# Novatek visual display processor
+/(odm|vendor/odm|vendor)/bin/hw/vendor\.novatek\.hardware\.visdisplaysrv-service   u:object_r:hal_visdisplaysrv_default_exec:s0
+/dev/vis_display_spidev   u:object_r:nvt_device:s0

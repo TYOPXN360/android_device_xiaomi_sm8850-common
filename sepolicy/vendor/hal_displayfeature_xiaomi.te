@@ -54,7 +54,10 @@ allow vendor_hal_displayfeature_xiaomi_default vendor_display_vendor_data_file:f
 allow vendor_hal_displayfeature_xiaomi_default vendor_displayfeature_device:chr_file { ioctl open read write };
 allow vendor_hal_displayfeature_xiaomi_default vendor_displaylog_device:chr_file { ioctl open read write };
 allow vendor_hal_displayfeature_xiaomi_default vendor_hal_display_config_hwservice:fd *;
-allow vendor_hal_displayfeature_xiaomi_default vendor_hal_framemaster_xiaomi_service:service_manager { add find };
+# The display feature HAL is a client of FrameMaster, not its owner: the
+# Novatek service is the one that registers it. Only find here, add would
+# trip the neverallow that keeps each service to a single provider.
+allow vendor_hal_displayfeature_xiaomi_default vendor_hal_framemaster_xiaomi_service:service_manager find;
 allow vendor_hal_displayfeature_xiaomi_default vendor_hal_vnddisplayconfig_service:service_manager find;
 allow vendor_hal_displayfeature_xiaomi_default vendor_miclstc_service:service_manager find;
 allow vendor_hal_displayfeature_xiaomi_default vendor_mistcdisplay_service:service_manager find;

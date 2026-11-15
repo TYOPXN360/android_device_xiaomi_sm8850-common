@@ -1,26 +1,40 @@
 type hal_visdisplaysrv_default, domain;
 type hal_visdisplaysrv_default_exec, exec_type, file_type, vendor_file_type;
+type hal_visdisplaysrv_service, hal_service_type, protected_service, service_manager_type;
+type vendor_hal_framecapturemanager_xiaomi_service, hal_service_type, service_manager_type;
 
+# The Novatek visual display processor. The same process also publishes
+# IFrameMaster and IFrameCaptureManager - it links libframemaster and
+# libframecapturemanager - which is what miui-services' UIService drives when
+# the "Dual-core visuals" switch is turned on. That means this HAL is the
+# backend for the stock display enhancement feature, not just an idle daemon.
 init_daemon_domain(hal_visdisplaysrv_default)
 binder_use(hal_visdisplaysrv_default)
 vndbinder_use(hal_visdisplaysrv_default)
 
-# The service talks to SurfaceFlinger and the graphics allocator to hand over
-# the processed stream.
+# It hands the processed stream to the composer and allocates through the
+# graphics allocator.
 hal_client_domain(hal_visdisplaysrv_default, hal_graphics_allocator)
 hal_client_domain(hal_visdisplaysrv_default, hal_graphics_composer)
 
-# It registers vendor.novatek.hardware.visdisplaysrv/default with vndservicemanager.
-add_service(hal_visdisplaysrv_default, visdisplaysrv_service)
+add_service(hal_visdisplaysrv_default, hal_visdisplaysrv_service)
+add_service(hal_visdisplaysrv_default, vendor_hal_framemaster_xiaomi_service)
+add_service(hal_visdisplaysrv_default, vendor_hal_framecapturemanager_xiaomi_service)
 
 # The panel link is a SPI device created by the driver at boot; the rc file
 # chmods it 0666 so the HAL can map it.
 allow hal_visdisplaysrv_default nvt_device:chr_file rw_file_perms;
 
-# Reads the DQE scene tables that live on odm.
+# The DQE scene tables (ASICScene.xml) live on odm.
 r_dir_file(hal_visdisplaysrv_default, vendor_configs_file)
 allow hal_visdisplaysrv_default vendor_file:file r_file_perms;
 
 # Scratch space for the frame buffers it shares with the composer.
 allow hal_visdisplaysrv_default vendor_display_vendor_data_file:dir create_dir_perms;
 allow hal_visdisplaysrv_default vendor_display_vendor_data_file:file create_file_perms;
+
+allow hal_visdisplaysrv_default hal_graphics_mapper_hwservice:hwservice_manager find;
+allow hal_visdisplaysrv_default hal_graphics_allocator_service:service_manager find;
+allow hal_visdisplaysrv_default hal_graphics_allocator_default_tmpfs:file rw_file_perms;
+allow hal_visdisplaysrv_default input_device:dir r_dir_perms;
+allow hal_visdisplaysrv_default input_device:chr_file rw_file_perms;

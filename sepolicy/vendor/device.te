@@ -5,6 +5,10 @@ type vendor_charge_block_device, dev_type;
 type vendor_displayfeature_device, dev_type;
 type vendor_displaylog_device, dev_type;
 
+# Novatek visual display processor: /dev/vis_display_spidev, the SPI link to
+# the display ASIC.
+type nvt_device, dev_type;
+
 # Fingerprint
 type vendor_fingerprint_device, dev_type;
 

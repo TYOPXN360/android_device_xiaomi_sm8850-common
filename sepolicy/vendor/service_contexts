@@ -59,3 +59,7 @@ vendor.xiaomi.hardware.aek.IAEKService/default               u:object_r:hal_mifa
 vendor.xiaomi.hardware.aon.IAlwaysOn/miaonservicebymiface    u:object_r:hal_miface_service:s0
 vendor.xiaomi.hardware.aon.auth.IAONAuth/default             u:object_r:hal_miface_service:s0
 vendor.xiaomi.sensor.aonframe.IMiAonFrame/default    u:object_r:hal_camera_aon_service:s0
+
+# Novatek visual display processor. The same process publishes FrameCaptureManager.
+vendor.novatek.hardware.visdisplaysrv.IVisdisplaysrv/default      u:object_r:hal_visdisplaysrv_service:s0
+vendor.xiaomi.hardware.framecapturemanager.IFrameCaptureManager/default   u:object_r:vendor_hal_framecapturemanager_xiaomi_service:s0
