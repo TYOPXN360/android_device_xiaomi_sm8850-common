@@ -464,6 +464,8 @@ odm/lib64/sensors.touch.detect.so
 odm/lib64/vendor.qti.qvirt-V2-ndk.so
 odm/lib64/vendor.xiaomi.hardware.framecapturemanager-V1-ndk.so
 odm/lib64/vendor.xiaomi.hardware.framemaster-V1-ndk.so
+odm/etc/vintf/manifest/vendor.xiaomi.hardware.framemaster_aidl-service.xml
+odm/etc/vintf/manifest/vendor.xiaomi.hardware.framecapturemanager_aidl-service.xml
 odm/lib64/vendor.xiaomi.hardware.idmanager-V1-ndk.so
 product/app/SoterService/SoterService.apk:product/app/SoterService/SoterService.apk
 product/app/uimgbaservice/uimgbaservice.apk
