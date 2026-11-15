@@ -79,25 +79,6 @@
                 android:value="@string/display_enhance_entry_summary" />
 </activity>
 
-        <activity
-            android:name=".rearlight.RearLightSettingsActivity"
-            android:configChanges="orientation|screenSize"
-            android:exported="true"
-            android:label="@string/rear_light_title">
-            <intent-filter>
-                <action android:name="com.android.settings.action.IA_SETTINGS" />
-            </intent-filter>
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.sound" />
-            <meta-data
-                android:name="com.android.settings.order"
-                android:value="-8" />
-                    <meta-data
-                android:name="com.android.settings.summary"
-                android:value="@string/rear_light_entry_summary" />
-</activity>
-
     </application>
 </manifest>
 

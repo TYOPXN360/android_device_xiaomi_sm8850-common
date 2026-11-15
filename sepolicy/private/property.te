@@ -2,4 +2,3 @@
 # stop hal_visdisplaysrv_default when this changes, and init reads properties
 # through the property service itself, so internal visibility is enough.
 system_internal_prop(disp_enhance_prop)
-

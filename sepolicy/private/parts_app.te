@@ -7,6 +7,11 @@ allow parts_app activity_service:service_manager find;
 allow parts_app activity_task_service:service_manager find;
 allow parts_app audio_service:service_manager find;
 allow parts_app netstats_service:service_manager find;
+# PhoneWindow routes the volume keys through MediaSessionManager, which asks
+# servicemanager for media_session. Without this the lookup is denied, the
+# binder comes back null and every volume key press throws a
+# NullPointerException out of MediaSessionManager.dispatchVolumeKeyEventInternal.
+allow parts_app media_session_service:service_manager find;
 allow parts_app hal_touchfeature_xiaomi_service:service_manager find;
 binder_call(parts_app, hal_touchfeature_xiaomi_default)
 
@@ -16,7 +21,3 @@ allow parts_app system_app_data_file:lnk_file create_file_perms;
 
 # The AI display enhancement switch only exists to flip this property.
 set_prop(parts_app, disp_enhance_prop)
-
-# Rear light switches.
-set_prop(parts_app, rear_light_prop)
-get_prop(parts_app, rear_light_prop)
