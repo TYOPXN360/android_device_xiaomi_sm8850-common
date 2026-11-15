@@ -131,6 +131,21 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Read-only partitions are EROFS, like stock. The stock odm/system/vendor images
+# on this device are EROFS with LZ4, and matching that matters for two reasons:
+# the OTA payload then carries data that is already compressed (so the payload
+# is smaller and the update writes less), and the kernel mounts exactly the
+# format the vendor fstab expects rather than relying on the ext4 fallback.
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := erofs
+
+# lz4hc,9 matches the compression stock ships. BOARD_EROFS_USE_LEGACY_COMPRESSION
+# would fall back to plain lz4, which compresses worse.
+BOARD_EROFS_COMPRESSOR := lz4hc,9
+
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
 
