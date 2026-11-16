@@ -17,6 +17,8 @@ rust_binary {
         "vendor.xiaomi.sensor.citsensorservice-V1-rust",
         "libbinder_rs",
         "libandroid_logger",
+        // android_logger implements the `log` facade; the crate itself has to be
+        // linked as well or the info!/warn! calls compile away to nothing.
         "liblog_rust",
     ],
 }
