@@ -16,6 +16,9 @@ aidl_interface {
         cpp: {
             enabled: true,
         },
+        rust: {
+            enabled: true,
+        },
         java: {
             sdk_version: "module_current",
         },

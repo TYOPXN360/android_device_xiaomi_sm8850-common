@@ -3,15 +3,20 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
-cc_binary {
+rust_binary {
     name: "alsd",
     vendor: true,
     relative_install_path: "hw",
-    srcs: ["alsd.cpp"],
-    shared_libs: [
-        "libbinder_ndk",
-        "liblog",
-        "vendor.xiaomi.sensor.citsensorservice-V1-ndk",
-    ],
+    srcs: ["src/*.rs"],
+    crate_root: "src/main.rs",
     init_rc: ["alsd.rc"],
+    // Link the Rust standard library in statically: a vendor process may not
+    // depend on the dylib, which lives on /system.
+    prefer_rlib: true,
+    rustlibs: [
+        "vendor.xiaomi.sensor.citsensorservice-V1-rust",
+        "libbinder_rs",
+        "libandroid_logger",
+        "liblog_rust",
+    ],
 }
