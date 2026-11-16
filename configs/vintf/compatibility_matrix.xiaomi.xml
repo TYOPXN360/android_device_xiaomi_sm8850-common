@@ -235,4 +235,27 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- FrameMaster and FrameCaptureManager are published by the Novatek
+         visdisplaysrv process and are what the stock "Dual-core visuals" setting
+         drives. Their manifest fragments were extracted from stock, so they have
+         to be declared here or check_target_files_vintf rejects the OTA with
+         "instances are in the device manifest but not specified in framework
+         compatibility matrix" - and a device booted with that mismatch never
+         finishes booting. -->
+    <hal format="aidl" optional="true">
+        <name>vendor.xiaomi.hardware.framemaster</name>
+        <version>1</version>
+        <interface>
+            <name>IFrameMaster</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.xiaomi.hardware.framecapturemanager</name>
+        <version>1</version>
+        <interface>
+            <name>IFrameCaptureManager</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
