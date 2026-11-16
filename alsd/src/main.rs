@@ -65,7 +65,12 @@ fn open_backlight(path: &str) -> Option<File> {
 /// Blocks until the HAL is registered, then returns a proxy to it.
 fn connect() -> binder::Strong<dyn ICitSensorService> {
     loop {
-        match binder::get_interface(SERVICE_NAME) {
+        // wait_for_interface blocks until the service appears and restarts it
+        // when it is declared as a dynamic (lazy) AIDL service, which is how
+        // citsensorservice is registered. get_interface is deprecated and gave
+        // up after a fixed poll window, which is what left the previous version
+        // silently spinning when the HAL was slower to start than the daemon.
+        match binder::wait_for_interface(SERVICE_NAME) {
             Ok(svc) => {
                 info!("connected to {SERVICE_NAME}");
                 return svc;
@@ -79,7 +84,14 @@ fn connect() -> binder::Strong<dyn ICitSensorService> {
 }
 
 fn main() {
-    android_logger::init_once(android_logger::Config::default().with_tag("alsd"));
+    // The level has to be stated explicitly: android_logger filters records
+    // against log::max_level() when no level is given, and a release build
+    // compiles that to Off, which silently drops every info!/warn! call.
+    android_logger::init_once(
+        android_logger::Config::default()
+            .with_tag("alsd")
+            .with_max_level(log::LevelFilter::Info),
+    );
 
     loop {
         let mut panel0 = open_backlight(BACKLIGHT_PANEL0);
@@ -125,7 +137,14 @@ fn main() {
                 }
             }
 
-            match service.triggerCwbDump(display_id, 0, true) {
+            // cwbStatus has to be 1, not 0. In algo::requestFramebuffer the
+            // value selects the path: 0 falls through to a throttle branch that
+            // only reads a timestamp, while 1 wraps frameBufferManager::request
+            // in setTriggerCwbStatus(true/false). That flag is the one the
+            // wakeup tests: request() signals the cwb_dump thread only when
+            // fbm->[0xa5] == 1, and nothing else ever sets it, so passing 0
+            // leaves the thread asleep and the lux frozen.
+            match service.triggerCwbDump(display_id, 1, true) {
                 Ok(ret) => info!("triggerCwbDump display={display_id} dbv={dbv} ret={ret}"),
                 Err(e) => {
                     warn!("triggerCwbDump failed ({e:?}), reconnecting");
