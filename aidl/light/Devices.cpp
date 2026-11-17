@@ -82,7 +82,11 @@ bool Devices::setBreath(const std::string& color, uint8_t brightness, uint32_t r
 
 void Devices::setNotificationState(const State& state) {
     if (!state.color.isLit()) {
-        writeToFile(mBasePath + "run", 0);
+        // With the chip already off every register write of "run" fails and
+        // is retried, flooding I2C errors
+        if (mCurrentMode != 0 || isEnabled()) {
+            writeToFile(mBasePath + "run", 0);
+        }
         writeToFile(mBasePath + "hwen", 0);
         mCurrentMode = 0;
         return;
