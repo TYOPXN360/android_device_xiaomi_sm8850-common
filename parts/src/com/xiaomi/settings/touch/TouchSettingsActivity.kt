@@ -6,10 +6,10 @@
 package com.xiaomi.settings.touch
 
 import android.os.Bundle
-import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity
+import com.xiaomi.settings.PartsActivity
 import com.android.settingslib.collapsingtoolbar.R
 
-class TouchSettingsActivity : CollapsingToolbarBaseActivity() {
+class TouchSettingsActivity : PartsActivity() {
 
     companion object {
         private const val TAG = "TouchSettingsActivity"
