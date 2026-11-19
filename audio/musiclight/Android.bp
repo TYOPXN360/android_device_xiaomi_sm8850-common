@@ -1,0 +1,47 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// The effect HAL here is the stock V3 one, so build the AOSP effect base
+// classes (aosp/, unmodified copies) against V3 instead of the latest
+// version libaudioeffectaidlcommon uses.
+cc_library_shared {
+    name: "libmusiclightaidl",
+    vendor: true,
+    relative_install_path: "soundfx",
+    srcs: [
+        "MusicLight.cpp",
+        "aosp/EffectContext.cpp",
+        "aosp/EffectImpl.cpp",
+        "aosp/EffectThread.cpp",
+    ],
+    local_include_dirs: ["include"],
+    // aosp/EffectContext.cpp includes "include/effect-impl/EffectTypes.h"
+    include_dirs: ["hardware/interfaces/audio/aidl/default"],
+    header_libs: [
+        "libaudioaidl_headers",
+        "libaudio_system_headers",
+        "libsystem_headers",
+    ],
+    shared_libs: [
+        "android.hardware.audio.effect-V3-ndk",
+        "android.hardware.common-V2-ndk",
+        "android.hardware.common.fmq-V1-ndk",
+        "android.media.audio.common.types-V4-ndk",
+        "libaudioutils",
+        "libbase",
+        "libbinder_ndk",
+        "libcutils",
+        "libfmq",
+        "liblog",
+        "libutils",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wthread-safety",
+        "-DBACKEND_NDK",
+    ],
+}
