@@ -1,4 +1,7 @@
-# Backs the AI display enhancement switch. init owns the triggers that start and
-# stop hal_visdisplaysrv_default when this changes, and init reads properties
-# through the property service itself, so internal visibility is enough.
+# Backs the AI display enhancement switch.  init.songyuan.rc is installed on
+# /vendor, so its on-property triggers are evaluated by vendor_init (not by the
+# system init domain).  vendor_init cannot read system_internal_prop types by
+# default, so without the get_prop() below the trigger never fires and the
+# switch cannot start or stop hal_visdisplaysrv_default.
 system_internal_prop(disp_enhance_prop)
+get_prop(vendor_init, disp_enhance_prop)
