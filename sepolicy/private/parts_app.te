@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+
 type parts_app, domain, coredomain;
 typeattribute parts_app mlstrustedsubject;
 
@@ -22,3 +25,11 @@ allow parts_app system_app_data_file:lnk_file create_file_perms;
 
 # The AI display enhancement switch only exists to flip this property.
 set_prop(parts_app, disp_enhance_prop)
+
+# "双芯视效" is driven through FrameMaster, the same vendor entry point the
+# stock HyperOS uiservice uses. FrameMaster is published by the display feature
+# HAL (vendor_hal_displayfeature_xiaomi_default); that process pushes the result
+# down to the Novatek visdisplay HAL, so the app never needs to touch the vendor
+# HAL directly.
+allow parts_app vendor_hal_framemaster_xiaomi_service:service_manager find;
+binder_call(parts_app, vendor_hal_displayfeature_xiaomi_default)

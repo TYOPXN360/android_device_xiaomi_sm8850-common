@@ -8,4 +8,6 @@
     hal_touchfeature_xiaomi_default
     hal_touchfeature_xiaomi_default_exec
     hal_touchfeature_xiaomi_service
+    vendor_hal_framemaster_xiaomi_service
+    vendor_hal_displayfeature_xiaomi_default
     ))
