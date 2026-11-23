@@ -60,6 +60,18 @@ allow vendor_hal_displayfeature_xiaomi_default vendor_hal_display_config_hwservi
 # add belongs here; the Novatek HAL only finds them.
 allow vendor_hal_displayfeature_xiaomi_default vendor_hal_framemaster_xiaomi_service:service_manager { add find };
 allow vendor_hal_displayfeature_xiaomi_default vendor_hal_framecapturemanager_xiaomi_service:service_manager { add find };
+# FrameMaster forwards the dual-DPU / MEMC / SDR2HDR request to the Novatek
+# visual display processor through NVTICController, which resolves
+# vendor.novatek.hardware.visdisplaysrv.IVisdisplaysrv/default. Without these
+# getService() returns NULL after the 5s binder wait, sendDualdpuCmd logs
+# ret=-1, and the selected scene never reaches the panel.
+#
+# binder_call() expands to the domain-level call/transfer rules (plus fd use),
+# which is what the binder lookup actually needs; a rule against the
+# service_manager_type itself trips the domain.te neverallow on
+# service_manager_type:binder call.
+allow vendor_hal_displayfeature_xiaomi_default hal_visdisplaysrv_service:service_manager find;
+binder_call(vendor_hal_displayfeature_xiaomi_default, hal_visdisplaysrv_default)
 allow vendor_hal_displayfeature_xiaomi_default vendor_hal_vnddisplayconfig_service:service_manager find;
 allow vendor_hal_displayfeature_xiaomi_default vendor_miclstc_service:service_manager find;
 allow vendor_hal_displayfeature_xiaomi_default vendor_mistcdisplay_service:service_manager find;
