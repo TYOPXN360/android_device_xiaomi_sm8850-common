@@ -50,6 +50,15 @@ lib_fixups: lib_fixups_user_type = {
 blob_fixups: blob_fixups_user_type = {
     'system_ext/etc/init/qspa_system.rc': blob_fixup()
         .regex_replace(r'\$\{ro\.boot\.vendor\.qspa:-default\}', 'default'),
+    'vendor/etc/audio/sku_canoe/audio_effects_config.xml': blob_fixup()
+        .regex_replace(
+            r'(\n(\s*)<library name="misoundfx".*\n)',
+            r'\1\2<library name="musiclight" path="libmusiclightaidl.so"/>\n',
+        )
+        .regex_replace(
+            r'(\n(\s*)<effect name="misoundfx".*\n)',
+            r'\1\2<effect name="musiclight" library="musiclight" uuid="7e1bef4c-45d6-4672-8070-25a8a4d230a7" type="1a8feafc-486d-4fea-9e19-9a5f583f1c91"/>\n',
+        ),
     (
         'vendor/lib64/libVoiceSdk.so',
         'vendor/lib64/libcapiv2uvvendor.so',
@@ -62,22 +71,9 @@ blob_fixups: blob_fixups_user_type = {
         'odm/lib64/libmiXmlParser.so',
         'vendor/bin/hw/audiohalservice.qti',
         'vendor/bin/hw/vendor.qti.hardware.display.composer-service',
-        'vendor/bin/poweropt-service',
-        'vendor/bin/poweropt-service',
-        'vendor/bin/qsap_mpamsvc',
         'vendor/lib64/hw/libaudioeffecthal.qti.so',
-        'vendor/lib64/libaodoptfeature.so',
         'vendor/lib64/libaudiocloudctrl.so',
-        'vendor/lib64/libcamerapoweroptfeature.so',
         'vendor/lib64/libdemura_oem_plugin.so',
-        'vendor/lib64/libgamepoweroptfeature.so',
-        'vendor/lib64/liblearningmodule.so',
-        'vendor/lib64/liboffscreenpoweroptfeature.so',
-        'vendor/lib64/libpowercallback.so',
-        'vendor/lib64/libpowercore.so',
-        'vendor/lib64/libpsmoptfeature.so',
-        'vendor/lib64/libstandbyfeature.so',
-        'vendor/lib64/libvideooptfeature.so',
         'vendor/lib64/libxlog.so',
         'vendor/lib64/soundfx/libquasar.so',
         'vendor/lib64/hw/libaudiocorehal.qti.so',

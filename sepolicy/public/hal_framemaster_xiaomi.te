@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: The LineageOS Project
+# SPDX-License-Identifier: Apache-2.0
+#
+# The display feature HAL publishes FrameMaster, which the system_ext
+# XiaomiParts app calls for "双芯视效". Both the service type and the HAL domain
+# therefore have to be nameable from public policy; all of the actual allow
+# rules (binder_use, hal_client_domain, service registration, file access) stay
+# in the vendor policy directory.
+type vendor_hal_framemaster_xiaomi_service, hal_service_type, service_manager_type;
+type vendor_hal_displayfeature_xiaomi_default, domain;
